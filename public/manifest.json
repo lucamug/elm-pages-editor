@@ -1,0 +1,25 @@
+{
+    "short_name": "Elm Pages Editor",
+    "name": "Editor to change and preview pages",
+    "icons": [
+        {
+            "src": "/images/favicon.ico",
+            "sizes": "16x16",
+            "type": "image/ico"
+        },
+        {
+            "src": "/images/favicon192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/favicon512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "./",
+    "display": "standalone",
+    "theme_color": "#ffdf34",
+    "background_color": "#000000"
+}

@@ -1,0 +1,28 @@
+{
+    "name": "elm-pages-editor",
+    "version": "1.0.0",
+    "description": "Elm Pages Editor",
+    "main": "index.js",
+    "directories": {
+        "test": "tests"
+    },
+    "dependencies": {
+        "create-elm-app": "^1.10.2"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "start": "elm-app start",
+        "build": "elm-app build",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lucamug/elm-pages-editor.git"
+    },
+    "author": "lucamug",
+    "license": "BSD3",
+    "bugs": {
+        "url": "https://github.com/lucamug/elm-pages-editor/issues"
+    },
+    "homepage": "https://github.com/lucamug/elm-pages-editor/#readme"
+}
