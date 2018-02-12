@@ -1,11 +1,16 @@
 # Elm Pages Editor
 
-Inspired by
+* [Demo With Editor](http://guupa.com/elm-pages-editor/)
+* [Demo Standalone](http://guupa.com/elm-pages-editor/indexStandalone.html)
 
-* elm-logo
-* elm-spa-boilerplate
-* elm-style-framework
-* elm-styleguide-generator
+Inspired by/Made with
+
+* [elm-lang](http://elm-lang.org/)
+* [stylish-elephants](http://package.elm-lang.org/packages/mdgriffith/stylish-elephants/4.0.0)
+* [elm-spa-boilerplate](https://github.com/lucamug/elm-spa-boilerplate)
+* [elm-style-framework](http://package.elm-lang.org/packages/lucamug/elm-style-framework/latest)
+* [elm-styleguide-generator](http://package.elm-lang.org/packages/lucamug/elm-styleguide-generator/latest)
+* [elm-logo](https://github.com/lucamug/elm-logo)
 
 ## Usage
 
@@ -56,7 +61,7 @@ The production version is built in `build` folder
 To build a stand alone version of the form (without editor)
 
 ```
-$ elm-live --output=docs/standalone.js src/Pages/Form.elm --dir=docs --open --debug --pushstate
+$ elm-live --output=docs/standalone.js src/Pages/Form.elm --dir=docs --pushstate
 ```
 
 ## Sizes
