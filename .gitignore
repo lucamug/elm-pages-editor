@@ -15,3 +15,4 @@ node_modules
 
 IGNORED.md
 loc.txt
+npm-debug.log

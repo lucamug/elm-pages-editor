@@ -646,10 +646,7 @@ view model =
             ]
         }
         [ Font.family
-            [ Font.external
-                { name = "Source Sans Pro"
-                , url = "https://fonts.googleapis.com/css?family=Source+Sans+Pro"
-                }
+            [ Font.typeface "Source Sans Pro"
             , Font.sansSerif
             ]
         , Font.size 16

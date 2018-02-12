@@ -12,6 +12,14 @@ Inspired by/Made with
 * [elm-styleguide-generator](http://package.elm-lang.org/packages/lucamug/elm-styleguide-generator/latest)
 * [elm-logo](https://github.com/lucamug/elm-logo)
 
+Related posts
+
+* [Media queries in Elm](https://medium.com/@l.mugnaini/media-queries-in-elm-183203a6c1a7)
+* [CSS Nirvana](https://medium.com/front-end-hacking/css-nirvana-a92ba04cca06)
+* [Single Page Application Boilerplate for Elm](https://medium.com/@l.mugnaini/single-page-application-boilerplate-for-elm-160bb5f3eec2)
+* [Zzero-maintenance Always-up-to-date Living Style Guide in Elm](https://medium.com/@l.mugnaini/zero-maintenance-always-up-to-date-living-style-guide-in-elm-dbf236d07522)
+* [Forms in Elm: Validation, Tutorial and Examples](https://medium.com/@l.mugnaini/forms-in-elm-validation-tutorial-and-examples-2339830055da)
+
 ## Usage
 
 To install global packages with npm follow https://docs.npmjs.com/getting-started/fixing-npm-permissions
@@ -76,10 +84,10 @@ $ cloc src > loc.txt
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Elm                              9            419             66           1543
-JavaScript                       2             15             27            107
+Elm                             13            801            244           3440
+JavaScript                       2             19             36            105
 -------------------------------------------------------------------------------
-SUM:                            11            434             93           1650
+SUM:                            15            820            280           3545
 -------------------------------------------------------------------------------
 ```
 

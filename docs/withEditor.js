@@ -32079,8 +32079,7 @@ var _lucamug$elm_pages_editor$Main$view = function (model) {
 			_0: _mdgriffith$stylish_elephants$Element_Font$family(
 				{
 					ctor: '::',
-					_0: _mdgriffith$stylish_elephants$Element_Font$external(
-						{name: 'Source Sans Pro', url: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro'}),
+					_0: _mdgriffith$stylish_elephants$Element_Font$typeface('Source Sans Pro'),
 					_1: {
 						ctor: '::',
 						_0: _mdgriffith$stylish_elephants$Element_Font$sansSerif,
