@@ -24610,66 +24610,465 @@ var _lucamug$elm_pages_editor$Framework_Button$introspection = function () {
 	};
 }();
 
-var _lucamug$elm_pages_editor$Framework_Logo$logoCoke = F2(
-	function (color, height) {
-		var p = _elm_lang$svg$Svg$path;
-		var d = _elm_lang$svg$Svg_Attributes$d;
-		var f = _elm_lang$svg$Svg_Attributes$fill;
-		var c = function () {
-			var _p0 = color;
-			switch (_p0) {
-				case 'red':
-					return '#f40009';
-				case 'white':
-					return '#fff';
-				default:
-					return '#000';
-			}
-		}();
-		var ratio = 202 / 67.5;
-		return A2(
-			_elm_lang$svg$Svg$svg,
-			{
+var _lucamug$elm_pages_editor$Framework_Logo$svgStrawberry = function (height) {
+	return A2(
+		_elm_lang$svg$Svg$svg,
+		{
+			ctor: '::',
+			_0: _elm_lang$svg$Svg_Attributes$viewBox('0 0 57 57'),
+			_1: {
 				ctor: '::',
-				_0: _elm_lang$svg$Svg_Attributes$version('1'),
+				_0: _elm_lang$svg$Svg_Attributes$height(
+					_elm_lang$core$Basics$toString(height)),
 				_1: {
 					ctor: '::',
-					_0: _elm_lang$svg$Svg_Attributes$viewBox('0 0 202 67.5'),
+					_0: _elm_lang$svg$Svg_Attributes$width(
+						_elm_lang$core$Basics$toString(
+							_elm_lang$core$Basics$floor(
+								_elm_lang$core$Basics$toFloat(height) * 1))),
+					_1: {ctor: '[]'}
+				}
+			}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$svg$Svg$path,
+				{
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$fill('#659c35'),
 					_1: {
 						ctor: '::',
-						_0: _elm_lang$svg$Svg_Attributes$height(
-							_elm_lang$core$Basics$toString(height)),
-						_1: {
-							ctor: '::',
-							_0: _elm_lang$svg$Svg_Attributes$width(
-								_elm_lang$core$Basics$toString(
-									_elm_lang$core$Basics$floor(
-										_elm_lang$core$Basics$toFloat(height) * ratio))),
-							_1: {ctor: '[]'}
-						}
+						_0: _elm_lang$svg$Svg_Attributes$d('M29.8 9.4l-2.9.6L24 1.5 29 0z'),
+						_1: {ctor: '[]'}
 					}
-				}
-			},
-			{
+				},
+				{ctor: '[]'}),
+			_1: {
 				ctor: '::',
 				_0: A2(
-					p,
+					_elm_lang$svg$Svg$path,
 					{
 						ctor: '::',
-						_0: f(c),
+						_0: _elm_lang$svg$Svg_Attributes$fill('#88c057'),
 						_1: {
 							ctor: '::',
-							_0: d('M168.1 56.8l-.6.6c-.9.8-1.8 1.6-2.9 1.2-.3-.1-.5-.5-.5-.8 0-2.3 1-4.4 2-6.4l.2-.5c2.8-4.8 6-10.3 10.9-14.2.8-.6 1.7-1 2.6-.7.2.2.5.6.5 1l-.2.4-3.8 6.7c-2.5 4.3-5 8.8-8.2 12.7zm-26.1-11c-.2 0-3.5-1-4.1-4-.5-2.7 1.3-4.7 3-5.7a3 3 0 0 1 2.7-.5c.7.5 1 1.4 1 2.4l-.2 1.8v.1c-.6 2-1.4 4-2.4 5.8zM129.5 58a3 3 0 0 1-.4-1.6c-.1-3.6 3.8-10 6.5-13.5 1.1 2.5 3.7 4 5.3 4.7-2 4.4-8.6 13.6-11.4 10.4zm47 .6c-.6.5-1.5.1-1.1-.9.8-2.5 4.2-7.8 4.2-7.8l9.3-16.5h-6.4l-1 1.6a8.8 8.8 0 0 0-1.5-1.8c-1.6-1-3.9-.5-5.4.3-7 4-12 12-16 18.2 0 0-4 7-6.4 7.4-1.8.2-1.6-2.2-1.5-2.8.7-4.1 2.3-8 4-11.5A105.8 105.8 0 0 0 180 19c-.1 0-1.1.2-2.3.2-5.7 8-17.5 19.7-21 21.4 1.5-3.8 11.7-22 20.4-30.6l1.4-1.4c2.1-2 4.3-4.1 6-4.5.2 0 .4 0 .6.4.1 1.6-.5 2.8-1.2 4.2l-1 2 2.3-.6c1-2 2.2-4.1 1.8-6.8a2 2 0 0 0-1.6-1.6c-2.6-.5-5.4 1.4-7.7 3a110.1 110.1 0 0 0-30.3 40.5c-.6.4-3 1-3.4.7.8-1.7 1.9-4 2.4-6.6l.2-2.3c0-1.5-.4-3-1.8-4-1.6-.9-3.7-.5-5 .1-6.2 2.6-10.8 9-14.2 14.2a31 31 0 0 0-4 10.9c-.4 3.2.3 5.2 2.1 6.2 1.9 1 4.2 0 5.1-.5A39.1 39.1 0 0 0 143 48c.2 0 2 0 3.5-.4l-.8 2.5c-2.2 6.4-3.2 10.8-1.1 13.4 3 3.6 7.8-.2 11.8-5.1-.9 6 2.2 6.9 4.6 6.4 2.7-.7 5.7-3.6 7-5.1-.4 1.7-.2 4.9 2.2 5.2 1.7.3 3-.6 4.4-1.4a50.4 50.4 0 0 0 13.2-15.1h-2.2c-2.3 3.5-5.2 8-9 10.2zM95.9 23.1h6l3.4-5.5h-6zm95.9-14.6a24.4 24.4 0 0 1-15.1 3.7 88 88 0 0 0-4.6 5.5c8 2 16.6-2.5 21.4-6.8 5-4.4 7.6-9.9 7.6-9.9s-3.8 4.3-9.3 7.5zM141.2 7c-1 11-9.5 17.4-11.6 17.9-1.2.2-3.4-.3-1.5-5a30.5 30.5 0 0 1 13-14l.1 1.1zm-16.6 27.6c-.6-1.3-2-2.2-3.6-2-5 .4-9.9 4.5-12.4 10.4-1.4 3-2.1 5.5-2.6 9.5 1.5-1.8 4.7-4.7 8.3-6.3 0 0 .5-3.8 3-7.3 1-1.4 2.9-3.6 5-3 1.8.6 1.2 5.7-1.3 10.7a34.5 34.5 0 0 1-7.4 9.9c-2.5 2-6.2 4.6-9.5 2.7-2-1.2-3-3.8-2.8-7 1-9.3 5.2-17.1 11.2-26.1 6.2-8.3 13-16.9 22.2-21.4 2-1 3.7-1.2 5.2-.6 0 0-8.7 4.8-12.8 13.6-1 2.2-2.5 5.2-1 7.9.7 1.4 2 1.5 3.2 1.4 5-1.2 8.3-5.9 11-10.2A23.8 23.8 0 0 0 143 5.3c2.4-1.3 7.4 1 7.4 1 3.9 1.2 12.1 7.6 14.9 8.8 1.3-1.6 3.6-4 4.8-5.2l-1.8-1.1c-2.9-1.8-6-3.5-9-5.1A18 18 0 0 0 144 2.3l-2.2.7c-2-2.3-5.5-2-8-1.4-9.3 2.6-17.8 9-27 20.2a73.8 73.8 0 0 0-13 23.7c-1.7 5-2.3 12.4 2 16.7 3.5 3.7 8.2 3 11.5 1.6a36.7 36.7 0 0 0 17-20c.7-2.6 1.6-6.3.2-9.1zm-79.9-8.5L43.5 29h-1.3c-1.7-.6-3-1.8-3.4-3.1-.5-2.6 1.7-4.7 2.7-5.5 1-.6 2.4-1 3.3-.3.5.6.7 1.4.7 2.3 0 1.2-.3 2.5-.8 3.8zm-2.6 5.3v.2l-2.8 4.5c-1.7 2.2-3.7 5-6.3 6.3-.8.3-1.8.4-2.4-.2-1.1-1.4-.5-3.3 0-4.9l.1-.5a45.5 45.5 0 0 1 5.8-10.1 9.1 9.1 0 0 0 5.7 4.3v.4zm34.4-3c1.2-1.7 4.8-6.2 5.7-7 3-2.6 4.1-1.4 4.2-.6a578.7 578.7 0 0 1-10 17 14 14 0 0 1-4.9 5c-.3.1-.8.1-1.1-.1-.4-.3-.6-.8-.6-1.2.2-1.6 1.8-6.4 6.7-13zm-30.4-11c-3.8-2.5-11.5 2.3-17.6 10.4-5.6 7.4-8 15.9-5.3 19.8 3.9 4.6 11.1-2.1 14.2-5.7l.4-.4c2-2.3 3.7-5 5.3-7.6l1.5-2.5c.9-.1 2-.4 3.1-.8 0 .1-4.6 7.8-4.1 11.7.1 1.2 0 5.4 4.2 6.7 5.6 1 10-3.3 14-7.2l1-1-.2.9c-1.7 5.7.5 6.9 2 7.3 4 1.2 9-4.8 9-4.8 0 1.9-.4 3.4 1.6 4.7 1.9.7 3.8-.3 5.2-1.3A54 54 0 0 0 93.3 33h-2.2s-5.3 7.8-8.8 9.4c0 0-.7.4-1 .1-.5-.4-.3-1.2 0-1.7l13.4-23.3h-6.3l-.8 1.2-.2-.3C83.5 13 74.6 21.4 68 31a63.5 63.5 0 0 1-9.3 11s-5 4.6-7.2 1.3a6.6 6.6 0 0 1 0-4.8A39.6 39.6 0 0 1 63.1 21c1.3-1 2.8-1.4 3.6-1 .7.5.8 1.6.4 2.3-1.2 0-2 .3-2.8 1-1.5 1.6-2 3-1.5 4.5 2.2 3.2 6.7-3.2 6.5-7 0-1.5-.8-2.8-2-3.4-1.6-1-4-.7-5.7 0-2.2.9-5.6 3.7-7.7 6-2.5 2.8-6.8 5.9-8.2 5.5.4-1.2 4.1-8.7.3-11.5zm31.7 40.7C70.4 53.3 60.3 52.5 44 57c-17.4 4-23.2 6.7-30.8 1.4-2.9-2.5-4-6.7-3.2-12.7a64.4 64.4 0 0 1 15.5-29.5c4.8-5.4 9.3-10 15.3-12 4.5-1.1 4.1 2.5 3.6 3-.6 0-1.6 0-2.4.6-.6.4-2.2 2-2.3 4-.2 3.2 3.1 2.5 4.5.8 1.5-2 3.8-5.7 2-9.2-.7-1.2-2-2.1-3.6-2.4a27 27 0 0 0-15.2 5.2 66.5 66.5 0 0 0-23 27.7C1.5 40.5-.9 49.8 2.7 57.4c2.9 5.3 8.7 8 15.6 7.5 4.9-.5 10.8-2.1 14.7-3 4-1 24.3-8 31 4.1 0 0 2.2-4.3 7.7-4.4a26 26 0 0 1 15.9 4.9c-1.6-2.4-6.1-6-9.9-8.4z'),
+							_0: _elm_lang$svg$Svg_Attributes$d('M36.1 8.5a8 8 0 0 0 2.4-3.6c-5.5-2-7.2.6-7.2.6 0-1-.9-1.5-2-1.6l.5 5.5-2.9.6-1.8-5.2c-.5.2-.8.5-.8.7 0 0-1.7-2.6-7.2-.6a7.9 7.9 0 0 0 2.4 3.7c-4.4.6-8.4 2-10.5 5.8 10.3 3 13.4-1.9 13.4-1.9.6 6.8 5.8 8.7 6.6 9 .8-.3 6-2.2 6.6-9 0 0 1.2 5 11.4 1.9-2.2-3.7-6.5-5.3-10.9-6z'),
 							_1: {ctor: '[]'}
 						}
 					},
 					{ctor: '[]'}),
-				_1: {ctor: '[]'}
-			});
-	});
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$svg$Svg$path,
+						{
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$fill('#e22f37'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$d('M45.3 15v-.1c-8.7 2-9.7-2.4-9.7-2.4-.6 6.8-5.8 8.7-6.6 9-.8-.3-6-2.2-6.6-9 0 0-2.6 4-10.8 2.5C9.3 17.6 8 21.4 8 27c0 13 12.8 30 20.5 30C36.2 57 49 39.9 49 27c0-5.8-1.3-9.6-3.8-12h.1z'),
+								_1: {ctor: '[]'}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$svg$Svg$path,
+							{
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$fill('#994530'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$d('M17.3 20.7c-.1-.4-.7-.4-.8 0 0 0-1.5 5.3-1.5 5.8a2 2 0 0 0 1.9 1.9c.5 0 1-.2 1.4-.6.3-.3.5-.8.5-1.3s-1.5-5.8-1.5-5.8zm11.8 4c-.1-.4-.7-.4-.8 0 0 0-1.5 5.3-1.5 5.8a2 2 0 0 0 2 1.9c.4 0 1-.2 1.3-.6.3-.3.5-.8.5-1.3s-1.5-5.8-1.5-5.8zm11.2-4c-.1-.4-.7-.4-.8 0 0 0-1.5 5.3-1.5 5.8a2 2 0 0 0 1.9 1.9c.5 0 1-.2 1.4-.6.3-.3.5-.8.5-1.3s-1.5-5.8-1.5-5.8zm-18.2 13c-.1-.4-.7-.4-.8 0 0 0-1.5 5.3-1.5 5.8a2 2 0 0 0 2 2c.4 0 1-.3 1.3-.7.3-.3.5-.8.5-1.3s-1.5-5.8-1.5-5.8zm7 9c-.1-.4-.7-.4-.8 0 0 0-1.5 5.3-1.5 5.8a2 2 0 0 0 2 1.9c.4 0 1-.2 1.3-.6.3-.3.5-.8.5-1.3s-1.5-5.8-1.5-5.8zm7-9c-.1-.4-.7-.4-.8 0 0 0-1.5 5.3-1.5 5.8a2 2 0 0 0 2 1.9c.4 0 1-.2 1.3-.6.3-.3.5-.8.5-1.3s-1.5-5.8-1.5-5.8z'),
+									_1: {ctor: '[]'}
+								}
+							},
+							{ctor: '[]'}),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		});
+};
+var _lucamug$elm_pages_editor$Framework_Logo$svgWatermelon = function (height) {
+	return A2(
+		_elm_lang$svg$Svg$svg,
+		{
+			ctor: '::',
+			_0: _elm_lang$svg$Svg_Attributes$viewBox('0 0 50.5 50.5'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$svg$Svg_Attributes$height(
+					_elm_lang$core$Basics$toString(height)),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$width(
+						_elm_lang$core$Basics$toString(
+							_elm_lang$core$Basics$floor(
+								_elm_lang$core$Basics$toFloat(height) * 1))),
+					_1: {ctor: '[]'}
+				}
+			}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$svg$Svg$path,
+				{
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$fill('#88c057'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$d('M18.4 24l1.4 4.5c.2 1.1-.6 2.2-1.7 2.6l-1.1.4-.3 1a4 4 0 0 1-2.7 2.7c-1.2.3-3.7-2.3-4.7-2.1L0 42.4A30 30 0 0 0 42.4 0l-24 24z'),
+						_1: {ctor: '[]'}
+					}
+				},
+				{ctor: '[]'}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$svg$Svg$path,
+					{
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$fill('#e22f37'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$d('M37 5.3L18.5 24l1.4 4.5c.2 1.1-.6 2.2-1.7 2.6l-1.1.4-.3 1a4 4 0 0 1-2.7 2.7c-1.2.3-3.7-2.3-4.7-2.1l-4 4c8.8 9.5 22.4 8.7 31.5-.3S46.6 14 37 5.3z'),
+							_1: {ctor: '[]'}
+						}
+					},
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$svg$Svg$circle,
+						{
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$cx('4.5'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$cy('17'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$svg$Svg$circle,
+							{
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$cx('16.5'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$cy('39'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$svg$Svg$circle,
+								{
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$cx('26'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$cy('25.6'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$svg$Svg$circle,
+									{
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$cx('30.9'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$cy('20.7'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									},
+									{ctor: '[]'}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$svg$Svg$circle,
+										{
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$cx('28.1'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$cy('37.6'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										},
+										{ctor: '[]'}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$svg$Svg$circle,
+											{
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$cx('33'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$svg$Svg_Attributes$cy('32.7'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											},
+											{ctor: '[]'}),
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$svg$Svg$circle,
+												{
+													ctor: '::',
+													_0: _elm_lang$svg$Svg_Attributes$cx('38'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$svg$Svg_Attributes$cy('27.7'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												},
+												{ctor: '[]'}),
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_elm_lang$svg$Svg$circle,
+													{
+														ctor: '::',
+														_0: _elm_lang$svg$Svg_Attributes$cx('35.9'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$svg$Svg_Attributes$cy('15.7'),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+																	_1: {ctor: '[]'}
+																}
+															}
+														}
+													},
+													{ctor: '[]'}),
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_elm_lang$svg$Svg$circle,
+														{
+															ctor: '::',
+															_0: _elm_lang$svg$Svg_Attributes$cx('22.4'),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$svg$Svg_Attributes$cy('36.2'),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+																	_1: {
+																		ctor: '::',
+																		_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														},
+														{ctor: '[]'}),
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_elm_lang$svg$Svg$circle,
+															{
+																ctor: '::',
+																_0: _elm_lang$svg$Svg_Attributes$cx('27.5'),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$svg$Svg_Attributes$cy('31'),
+																	_1: {
+																		ctor: '::',
+																		_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+																		_1: {
+																			ctor: '::',
+																			_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+																			_1: {ctor: '[]'}
+																		}
+																	}
+																}
+															},
+															{ctor: '[]'}),
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$svg$Svg$circle,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$svg$Svg_Attributes$cx('32.5'),
+																	_1: {
+																		ctor: '::',
+																		_0: _elm_lang$svg$Svg_Attributes$cy('26'),
+																		_1: {
+																			ctor: '::',
+																			_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+																			_1: {
+																				ctor: '::',
+																				_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	}
+																},
+																{ctor: '[]'}),
+															_1: {
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$svg$Svg$circle,
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$svg$Svg_Attributes$cx('7.5'),
+																		_1: {
+																			ctor: '::',
+																			_0: _elm_lang$svg$Svg_Attributes$cy('27'),
+																			_1: {
+																				ctor: '::',
+																				_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+																				_1: {
+																					ctor: '::',
+																					_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+																					_1: {ctor: '[]'}
+																				}
+																			}
+																		}
+																	},
+																	{ctor: '[]'}),
+																_1: {
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$svg$Svg$circle,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$svg$Svg_Attributes$cx('13.5'),
+																			_1: {
+																				ctor: '::',
+																				_0: _elm_lang$svg$Svg_Attributes$cy('19'),
+																				_1: {
+																					ctor: '::',
+																					_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+																					_1: {
+																						ctor: '::',
+																						_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+																						_1: {ctor: '[]'}
+																					}
+																				}
+																			}
+																		},
+																		{ctor: '[]'}),
+																	_1: {
+																		ctor: '::',
+																		_0: A2(
+																			_elm_lang$svg$Svg$circle,
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$svg$Svg_Attributes$cx('37.3'),
+																				_1: {
+																					ctor: '::',
+																					_0: _elm_lang$svg$Svg_Attributes$cy('21.4'),
+																					_1: {
+																						ctor: '::',
+																						_0: _elm_lang$svg$Svg_Attributes$r('1.5'),
+																						_1: {
+																							ctor: '::',
+																							_0: _elm_lang$svg$Svg_Attributes$fill('#231f20'),
+																							_1: {ctor: '[]'}
+																						}
+																					}
+																				}
+																			},
+																			{ctor: '[]'}),
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		});
+};
 var _lucamug$elm_pages_editor$Framework_Logo$elmLogoColors = function (color) {
-	var _p1 = color;
-	switch (_p1.ctor) {
+	var _p0 = color;
+	switch (_p0.ctor) {
 		case 'Orange':
 			return A3(_elm_lang$core$Color$rgb, 240, 173, 0);
 		case 'Yellow':
@@ -24801,7 +25200,8 @@ var _lucamug$elm_pages_editor$Framework_Logo$pencil = function (size) {
 			_1: {ctor: '[]'}
 		});
 };
-var _lucamug$elm_pages_editor$Framework_Logo$Cocacola = {ctor: 'Cocacola'};
+var _lucamug$elm_pages_editor$Framework_Logo$Watermelon = {ctor: 'Watermelon'};
+var _lucamug$elm_pages_editor$Framework_Logo$Strawberry = {ctor: 'Strawberry'};
 var _lucamug$elm_pages_editor$Framework_Logo$ElmWhite = {ctor: 'ElmWhite'};
 var _lucamug$elm_pages_editor$Framework_Logo$ElmYellow = {ctor: 'ElmYellow'};
 var _lucamug$elm_pages_editor$Framework_Logo$ElmMulticolor = {ctor: 'ElmMulticolor'};
@@ -24822,8 +25222,8 @@ var _lucamug$elm_pages_editor$Framework_Logo$Orange = {ctor: 'Orange'};
 var _lucamug$elm_pages_editor$Framework_Logo$logoElm = F2(
 	function (height, type_) {
 		var c = function () {
-			var _p2 = type_;
-			if (_p2.ctor === 'Colorful') {
+			var _p1 = type_;
+			if (_p1.ctor === 'Colorful') {
 				return {
 					c1: _lucamug$elm_pages_editor$Framework_Logo$elmLogoColors(_lucamug$elm_pages_editor$Framework_Logo$Orange),
 					c2: _lucamug$elm_pages_editor$Framework_Logo$elmLogoColors(_lucamug$elm_pages_editor$Framework_Logo$Green),
@@ -24831,12 +25231,12 @@ var _lucamug$elm_pages_editor$Framework_Logo$logoElm = F2(
 					c4: _lucamug$elm_pages_editor$Framework_Logo$elmLogoColors(_lucamug$elm_pages_editor$Framework_Logo$Blue)
 				};
 			} else {
-				var _p3 = _p2._0;
+				var _p2 = _p1._0;
 				return {
-					c1: _lucamug$elm_pages_editor$Framework_Logo$elmLogoColors(_p3),
-					c2: _lucamug$elm_pages_editor$Framework_Logo$elmLogoColors(_p3),
-					c3: _lucamug$elm_pages_editor$Framework_Logo$elmLogoColors(_p3),
-					c4: _lucamug$elm_pages_editor$Framework_Logo$elmLogoColors(_p3)
+					c1: _lucamug$elm_pages_editor$Framework_Logo$elmLogoColors(_p2),
+					c2: _lucamug$elm_pages_editor$Framework_Logo$elmLogoColors(_p2),
+					c3: _lucamug$elm_pages_editor$Framework_Logo$elmLogoColors(_p2),
+					c4: _lucamug$elm_pages_editor$Framework_Logo$elmLogoColors(_p2)
 				};
 			}
 		}();
@@ -24936,8 +25336,8 @@ var _lucamug$elm_pages_editor$Framework_Logo$logo = F2(
 	function (logo, size) {
 		return _mdgriffith$stylish_elephants$Element$html(
 			function () {
-				var _p4 = logo;
-				switch (_p4.ctor) {
+				var _p3 = logo;
+				switch (_p3.ctor) {
 					case 'Pencil':
 						return _lucamug$elm_pages_editor$Framework_Logo$pencil(size);
 					case 'ElmMulticolor':
@@ -24956,8 +25356,10 @@ var _lucamug$elm_pages_editor$Framework_Logo$logo = F2(
 						return _lucamug$elm_pages_editor$Framework_Logo$exitFullscreen(size);
 					case 'Fullscreen':
 						return _lucamug$elm_pages_editor$Framework_Logo$fullscreen(size);
+					case 'Strawberry':
+						return _lucamug$elm_pages_editor$Framework_Logo$svgStrawberry(size);
 					default:
-						return A2(_lucamug$elm_pages_editor$Framework_Logo$logoCoke, 'red', size);
+						return _lucamug$elm_pages_editor$Framework_Logo$svgWatermelon(size);
 				}
 			}());
 	});
@@ -24998,31 +25400,39 @@ var _lucamug$elm_pages_editor$Framework_Logo$introspection = {
 							ctor: '::',
 							_0: {
 								ctor: '_Tuple2',
-								_0: A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Cocacola, 32),
-								_1: 'logo Cocacola 32'
+								_0: A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Strawberry, 32),
+								_1: 'logo Strawberry 32'
 							},
 							_1: {
 								ctor: '::',
 								_0: {
 									ctor: '_Tuple2',
-									_0: A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Pencil, 32),
-									_1: 'logo ExitFullscreen 32'
+									_0: A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Watermelon, 32),
+									_1: 'logo Watermelon 32'
 								},
 								_1: {
 									ctor: '::',
 									_0: {
 										ctor: '_Tuple2',
-										_0: A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$ExitFullscreen, 32),
+										_0: A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Pencil, 32),
 										_1: 'logo ExitFullscreen 32'
 									},
 									_1: {
 										ctor: '::',
 										_0: {
 											ctor: '_Tuple2',
-											_0: A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Fullscreen, 32),
-											_1: 'logo Fullscreen 32'
+											_0: A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$ExitFullscreen, 32),
+											_1: 'logo ExitFullscreen 32'
 										},
-										_1: {ctor: '[]'}
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '_Tuple2',
+												_0: A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Fullscreen, 32),
+												_1: 'logo Fullscreen 32'
+											},
+											_1: {ctor: '[]'}
+										}
 									}
 								}
 							}
@@ -28586,8 +28996,10 @@ var _lucamug$elm_pages_editor$Pages_Form$negativeLogo = function (logo) {
 	switch (_p0.ctor) {
 		case 'ElmMulticolor':
 			return _lucamug$elm_pages_editor$Framework_Logo$ElmYellow;
-		case 'Cocacola':
-			return _lucamug$elm_pages_editor$Framework_Logo$Cocacola;
+		case 'Strawberry':
+			return _lucamug$elm_pages_editor$Framework_Logo$Strawberry;
+		case 'Watermelon':
+			return _lucamug$elm_pages_editor$Framework_Logo$Watermelon;
 		default:
 			return _lucamug$elm_pages_editor$Framework_Logo$ElmYellow;
 	}
@@ -28672,8 +29084,10 @@ var _lucamug$elm_pages_editor$Pages_Form$logoDecoder = function (logoString) {
 	switch (_p3) {
 		case 'ElmMulticolor':
 			return _elm_lang$core$Json_Decode$succeed(_lucamug$elm_pages_editor$Framework_Logo$ElmMulticolor);
-		case 'Cocacola':
-			return _elm_lang$core$Json_Decode$succeed(_lucamug$elm_pages_editor$Framework_Logo$Cocacola);
+		case 'Strawberry':
+			return _elm_lang$core$Json_Decode$succeed(_lucamug$elm_pages_editor$Framework_Logo$Strawberry);
+		case 'Watermelon':
+			return _elm_lang$core$Json_Decode$succeed(_lucamug$elm_pages_editor$Framework_Logo$Watermelon);
 		default:
 			return _elm_lang$core$Json_Decode$fail(
 				A2(_elm_lang$core$Basics_ops['++'], 'I don\'t know a logo named ', logoString));
@@ -30403,7 +30817,7 @@ var _lucamug$elm_pages_editor$Main$viewEditor = function (model) {
 									ctor: '::',
 									_0: A2(
 										_mdgriffith$stylish_elephants$Element_Input$option,
-										_lucamug$elm_pages_editor$Framework_Logo$Cocacola,
+										_lucamug$elm_pages_editor$Framework_Logo$Watermelon,
 										A2(
 											_mdgriffith$stylish_elephants$Element$el,
 											{
@@ -30415,8 +30829,26 @@ var _lucamug$elm_pages_editor$Main$viewEditor = function (model) {
 													_1: {ctor: '[]'}
 												}
 											},
-											A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Cocacola, 22))),
-									_1: {ctor: '[]'}
+											A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Watermelon, 22))),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_mdgriffith$stylish_elephants$Element_Input$option,
+											_lucamug$elm_pages_editor$Framework_Logo$Strawberry,
+											A2(
+												_mdgriffith$stylish_elephants$Element$el,
+												{
+													ctor: '::',
+													_0: _mdgriffith$stylish_elephants$Element$padding(10),
+													_1: {
+														ctor: '::',
+														_0: _mdgriffith$stylish_elephants$Element$alignLeft,
+														_1: {ctor: '[]'}
+													}
+												},
+												A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Strawberry, 22))),
+										_1: {ctor: '[]'}
+									}
 								}
 							}
 						}),
@@ -31499,7 +31931,7 @@ var _lucamug$elm_pages_editor$Main$initModel = F2(
 					_0: {
 						ctor: '_Tuple2',
 						_0: 'Page 2',
-						_1: {negative: false, logo: _lucamug$elm_pages_editor$Framework_Logo$Cocacola, color: _lucamug$elm_pages_editor$Framework_Color$Danger, background: 'images/back02.jpg', title: 'Sign in', submitText: 'Sign in'}
+						_1: {negative: false, logo: _lucamug$elm_pages_editor$Framework_Logo$Watermelon, color: _lucamug$elm_pages_editor$Framework_Color$Danger, background: 'images/back02.jpg', title: 'Sign in', submitText: 'Sign in'}
 					},
 					_1: {
 						ctor: '::',

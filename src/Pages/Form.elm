@@ -130,8 +130,11 @@ logoDecoder logoString =
         "ElmMulticolor" ->
             Json.Decode.succeed Logo.ElmMulticolor
 
-        "Cocacola" ->
-            Json.Decode.succeed Logo.Cocacola
+        "Strawberry" ->
+            Json.Decode.succeed Logo.Strawberry
+
+        "Watermelon" ->
+            Json.Decode.succeed Logo.Watermelon
 
         _ ->
             Json.Decode.fail <| "I don't know a logo named " ++ logoString
@@ -574,8 +577,11 @@ negativeLogo logo =
         Logo.ElmMulticolor ->
             Logo.ElmYellow
 
-        Logo.Cocacola ->
-            Logo.Cocacola
+        Logo.Strawberry ->
+            Logo.Strawberry
+
+        Logo.Watermelon ->
+            Logo.Watermelon
 
         _ ->
             Logo.ElmYellow

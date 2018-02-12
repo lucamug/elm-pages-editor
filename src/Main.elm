@@ -518,7 +518,7 @@ initModel flag location =
           )
         , ( "Page 2"
           , { negative = False
-            , logo = Logo.Cocacola
+            , logo = Logo.Watermelon
             , color = Danger
             , background = "images/back02.jpg"
             , title = "Sign in"
@@ -1057,7 +1057,8 @@ viewEditor model =
             , selected = Just model.modelForm.conf.logo
             , options =
                 [ Input.option Logo.ElmMulticolor (el [ padding 10, alignLeft ] (Logo.logo Logo.ElmMulticolor 22))
-                , Input.option Logo.Cocacola (el [ padding 10, alignLeft ] (Logo.logo Logo.Cocacola 22))
+                , Input.option Logo.Watermelon (el [ padding 10, alignLeft ] (Logo.logo Logo.Watermelon 22))
+                , Input.option Logo.Strawberry (el [ padding 10, alignLeft ] (Logo.logo Logo.Strawberry 22))
                 ]
             }
         , Input.radio []
