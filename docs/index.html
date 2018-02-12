@@ -20,6 +20,8 @@
     <script>
         /* beautify preserve:start */
         /* jshint ignore:start */
+    
+
         /* jshint ignore:end */
         /* beautify preserve:end */
         (function() {
@@ -34,7 +36,7 @@
             elmApp.ports.urlChange.subscribe(function(title) {
                 window.requestAnimationFrame(function() {
                     document.title = title;
-                    document.querySelector('meta[name="description"]').setAttribute("content", title);
+                    document.querySelex('meta[name="description"]').setAttribute("content", title);
                 });
             });
 
