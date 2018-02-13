@@ -1,7 +1,6 @@
-module Element.Hack exposing (..)
+module StyleElementsHack exposing (..)
 
 import Element
-import Html
 import Html.Attributes
 import Window
 
@@ -29,21 +28,6 @@ classifyDevice { width, height } =
     }
 
 
-styleElement : String -> Element.Element msg
-styleElement text =
-    Element.html (Html.node "style" [] [ Html.text text ])
-
-
-class : String -> Element.Attribute msg
-class name =
-    Element.attribute (Html.Attributes.class name)
-
-
 style : ( String, String ) -> Element.Attribute msg
 style style =
     Element.attribute (Html.Attributes.style [ style ])
-
-
-value : String -> Element.Attribute msg
-value value =
-    Element.attribute (Html.Attributes.value value)

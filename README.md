@@ -91,13 +91,20 @@ SUM:                            15            820            280           3545
 -------------------------------------------------------------------------------
 ```
 
-### Stand alone pages
+### With Editor pages
+
+```
+* elm-live --output=docs/withEditor.js src/Main.elm --dir=docs --pushstate
+* elm-make src/Main.elm --output=docs/withEditor.js --warn
+* uglifyjs docs/withEditor.js --mangle --toplevel --compress > docs/withEditor-min.js
+```
+
+### Standalone pages
 
 ```
 * elm-live --output=docs/standalone.js src/Pages/Form.elm --dir=docs --pushstate
-* elm-live --output=docs/withEditor.js src/Main.elm       --dir=docs --pushstate
+* elm-make src/Pages/Form.elm --output=docs/standalone.js --warn
 * uglifyjs docs/standalone.js --mangle --toplevel --compress > docs/standalone-min.js
-* uglifyjs docs/withEditor.js --mangle --toplevel --compress > docs/withEditor-min.js
 ```
 
 ### Regular

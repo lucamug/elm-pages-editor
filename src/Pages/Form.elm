@@ -16,7 +16,6 @@ import Element.Background as Background
 import Element.Border as Border
 import Element.Events as Events
 import Element.Font as Font
-import Element.Hack as Hack
 import Element.Input as Input
 import Framework.Button
 import Framework.Color as Color exposing (Color(..), color)
@@ -29,6 +28,7 @@ import Http
 import Json.Decode
 import Json.Decode.Pipeline
 import Json.Encode
+import StyleElementsHack as Hack
 import Svg
 import Svg.Attributes as SA
 import Validate

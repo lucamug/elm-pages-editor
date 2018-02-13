@@ -6,7 +6,6 @@ import Element.Background as Background
 import Element.Border as Border
 import Element.Events as Events
 import Element.Font as Font
-import Element.Hack as Hack
 import Element.Input as Input
 import Framework.Button as Button
 import Framework.Color as Color exposing (Color(..), color)
@@ -21,6 +20,7 @@ import Navigation
 import Pages.ElementExamples
 import Pages.ElementInputExamples
 import Pages.Form
+import StyleElementsHack as Hack
 import Styleguide
 import UrlParser exposing ((</>))
 import Window
@@ -657,7 +657,7 @@ view model =
     <|
         if model.route == Form then
             routeView Form model
-        else if model.device.width < 900 then
+        else if model.device.width < (320 * 2) then
             viewApp model
         else
             viewTwoColumnsView model
@@ -671,33 +671,60 @@ viewTwoColumnsView model =
             , Hack.style ( "max-width", "100vw" )
             , scrollbars
             , alignTop
-
-            --, width <| fillPortion 1
             ]
+
+        withoutDeviceFrame =
+            model.device.width < 740
+
+        portionLeft =
+            if withoutDeviceFrame then
+                1
+            else
+                3
+
+        portionRight =
+            if withoutDeviceFrame then
+                1
+            else
+                2
+
+        widthLeft =
+            floor (toFloat model.device.width / (portionRight + portionLeft)) * portionLeft
     in
     row []
         [ row
             (commonAttr
                 ++ [ Background.color <| color Grey
+                   , Border.widthEach { top = 0, left = 0, bottom = 0, right = 1 }
+                   , Background.color <| color Grey
+                   , width <| fillPortion portionLeft
                    ]
             )
           <|
-            [ column [ paddingXY 0 50, spacing 50 ]
-                [ viewDeviceFrame model
-                , viewApiResopnse model
+            [ column
+                [ paddingXY 0 0
+                , spacing 50
                 ]
+                (if withoutDeviceFrame then
+                    [ Element.map MsgForm (Pages.Form.viewElement widthLeft model.modelForm)
+                    ]
+                 else
+                    [ viewDeviceFrame model
+                    , viewApiResponse model
+                    ]
+                )
             ]
         , row
             (commonAttr
-                ++ []
+                ++ [ width <| fillPortion portionRight ]
             )
             [ viewApp model
             ]
         ]
 
 
-viewApiResopnse : Model -> Element msg
-viewApiResopnse model =
+viewApiResponse : Model -> Element msg
+viewApiResponse model =
     row
         [ paddingXY genericSpaceFromSide genericSpaceFromSide
         , width fill

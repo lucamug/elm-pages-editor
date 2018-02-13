@@ -18780,54 +18780,6 @@ var _mdgriffith$stylish_elephants$Element$classifyDevice = function (window) {
 	return _mdgriffith$stylish_elephants$Element$Device;
 };
 
-var _lucamug$elm_pages_editor$Element_Hack$value = function (value) {
-	return _mdgriffith$stylish_elephants$Element$attribute(
-		_elm_lang$html$Html_Attributes$value(value));
-};
-var _lucamug$elm_pages_editor$Element_Hack$style = function (style) {
-	return _mdgriffith$stylish_elephants$Element$attribute(
-		_elm_lang$html$Html_Attributes$style(
-			{
-				ctor: '::',
-				_0: style,
-				_1: {ctor: '[]'}
-			}));
-};
-var _lucamug$elm_pages_editor$Element_Hack$class = function (name) {
-	return _mdgriffith$stylish_elephants$Element$attribute(
-		_elm_lang$html$Html_Attributes$class(name));
-};
-var _lucamug$elm_pages_editor$Element_Hack$styleElement = function (text) {
-	return _mdgriffith$stylish_elephants$Element$html(
-		A3(
-			_elm_lang$html$Html$node,
-			'style',
-			{ctor: '[]'},
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html$text(text),
-				_1: {ctor: '[]'}
-			}));
-};
-var _lucamug$elm_pages_editor$Element_Hack$classifyDevice = function (_p0) {
-	var _p1 = _p0;
-	var _p3 = _p1.width;
-	var _p2 = _p1.height;
-	return {
-		width: _p3,
-		height: _p2,
-		phone: _elm_lang$core$Native_Utils.cmp(_p3, 600) < 1,
-		tablet: (_elm_lang$core$Native_Utils.cmp(_p3, 600) > 0) && (_elm_lang$core$Native_Utils.cmp(_p3, 1200) < 1),
-		desktop: (_elm_lang$core$Native_Utils.cmp(_p3, 1200) > 0) && (_elm_lang$core$Native_Utils.cmp(_p3, 1800) < 1),
-		bigDesktop: _elm_lang$core$Native_Utils.cmp(_p3, 1800) > 0,
-		portrait: _elm_lang$core$Native_Utils.cmp(_p3, _p2) < 0
-	};
-};
-var _lucamug$elm_pages_editor$Element_Hack$Device = F7(
-	function (a, b, c, d, e, f, g) {
-		return {width: a, height: b, phone: c, tablet: d, desktop: e, bigDesktop: f, portrait: g};
-	});
-
 var _mdgriffith$stylish_elephants$Element_Border$shadow = function (_p0) {
 	var _p1 = _p0;
 	return _mdgriffith$stylish_elephants$Internal_Model$BoxShadow(
@@ -28815,6 +28767,34 @@ var _lucamug$elm_pages_editor$Pages_ElementInputExamples$view = function (model)
 		});
 };
 
+var _lucamug$elm_pages_editor$StyleElementsHack$style = function (style) {
+	return _mdgriffith$stylish_elephants$Element$attribute(
+		_elm_lang$html$Html_Attributes$style(
+			{
+				ctor: '::',
+				_0: style,
+				_1: {ctor: '[]'}
+			}));
+};
+var _lucamug$elm_pages_editor$StyleElementsHack$classifyDevice = function (_p0) {
+	var _p1 = _p0;
+	var _p3 = _p1.width;
+	var _p2 = _p1.height;
+	return {
+		width: _p3,
+		height: _p2,
+		phone: _elm_lang$core$Native_Utils.cmp(_p3, 600) < 1,
+		tablet: (_elm_lang$core$Native_Utils.cmp(_p3, 600) > 0) && (_elm_lang$core$Native_Utils.cmp(_p3, 1200) < 1),
+		desktop: (_elm_lang$core$Native_Utils.cmp(_p3, 1200) > 0) && (_elm_lang$core$Native_Utils.cmp(_p3, 1800) < 1),
+		bigDesktop: _elm_lang$core$Native_Utils.cmp(_p3, 1800) > 0,
+		portrait: _elm_lang$core$Native_Utils.cmp(_p3, _p2) < 0
+	};
+};
+var _lucamug$elm_pages_editor$StyleElementsHack$Device = F7(
+	function (a, b, c, d, e, f, g) {
+		return {width: a, height: b, phone: c, tablet: d, desktop: e, bigDesktop: f, portrait: g};
+	});
+
 var _rtfeldman$elm_validate$Validate$ifInvalid = F2(
 	function (test, error) {
 		var validator = function (subject) {
@@ -29479,7 +29459,7 @@ var _lucamug$elm_pages_editor$Pages_Form$viewInput = F4(
 									_elm_lang$core$Basics_ops['++'],
 									{
 										ctor: '::',
-										_0: _lucamug$elm_pages_editor$Element_Hack$style(
+										_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 											{ctor: '_Tuple2', _0: 'transition', _1: '0.3s'}),
 										_1: {
 											ctor: '::',
@@ -29553,7 +29533,7 @@ var _lucamug$elm_pages_editor$Pages_Form$view2 = F2(
 			_0: _mdgriffith$stylish_elephants$Element$width(_mdgriffith$stylish_elephants$Element$fill),
 			_1: {
 				ctor: '::',
-				_0: _lucamug$elm_pages_editor$Element_Hack$style(
+				_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 					{
 						ctor: '_Tuple2',
 						_0: 'max-width',
@@ -29574,7 +29554,7 @@ var _lucamug$elm_pages_editor$Pages_Form$view2 = F2(
 				_0: _mdgriffith$stylish_elephants$Element$width(_mdgriffith$stylish_elephants$Element$shrink),
 				_1: {
 					ctor: '::',
-					_0: _lucamug$elm_pages_editor$Element_Hack$style(
+					_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 						{
 							ctor: '_Tuple2',
 							_0: 'min-width',
@@ -29594,7 +29574,7 @@ var _lucamug$elm_pages_editor$Pages_Form$view2 = F2(
 				_lucamug$elm_pages_editor$Pages_Form$onEnter(_lucamug$elm_pages_editor$Pages_Form$SubmitForm)),
 			_1: {
 				ctor: '::',
-				_0: _lucamug$elm_pages_editor$Element_Hack$style(
+				_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 					{ctor: '_Tuple2', _0: 'box-shadow', _1: '0px 3px 10px 2px rgba(0, 0, 0, 0.06)'}),
 				_1: {
 					ctor: '::',
@@ -29629,7 +29609,7 @@ var _lucamug$elm_pages_editor$Pages_Form$view2 = F2(
 								_elm_lang$core$Basics_ops['++'],
 								{
 									ctor: '::',
-									_0: _lucamug$elm_pages_editor$Element_Hack$style(
+									_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 										{
 											ctor: '_Tuple2',
 											_0: 'max-width',
@@ -29754,7 +29734,7 @@ var _lucamug$elm_pages_editor$Pages_Form$view2 = F2(
 												_lucamug$elm_pages_editor$Framework_Color$color(model.conf.color)),
 											_1: {
 												ctor: '::',
-												_0: _lucamug$elm_pages_editor$Element_Hack$style(
+												_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 													{
 														ctor: '_Tuple2',
 														_0: 'max-width',
@@ -30161,19 +30141,19 @@ var _lucamug$elm_pages_editor$Main$viewMenuStickyRight = F2(
 				_mdgriffith$stylish_elephants$Element$row,
 				{
 					ctor: '::',
-					_0: _lucamug$elm_pages_editor$Element_Hack$style(
+					_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 						{ctor: '_Tuple2', _0: 'opacity', _1: '0.7'}),
 					_1: {
 						ctor: '::',
-						_0: _lucamug$elm_pages_editor$Element_Hack$style(
+						_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 							{ctor: '_Tuple2', _0: 'position', _1: 'fixed'}),
 						_1: {
 							ctor: '::',
-							_0: _lucamug$elm_pages_editor$Element_Hack$style(
+							_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 								{ctor: '_Tuple2', _0: 'right', _1: '0'}),
 							_1: {
 								ctor: '::',
-								_0: _lucamug$elm_pages_editor$Element_Hack$style(
+								_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 									{ctor: '_Tuple2', _0: 'bottom', _1: 'auto'}),
 								_1: {
 									ctor: '::',
@@ -30262,7 +30242,7 @@ var _lucamug$elm_pages_editor$Main$viewHeader = function (model) {
 		});
 };
 var _lucamug$elm_pages_editor$Main$genericSpaceFromSide = 16;
-var _lucamug$elm_pages_editor$Main$viewApiResopnse = function (model) {
+var _lucamug$elm_pages_editor$Main$viewApiResponse = function (model) {
 	return A2(
 		_mdgriffith$stylish_elephants$Element$row,
 		{
@@ -30309,7 +30289,7 @@ var _lucamug$elm_pages_editor$Main$viewApiResopnse = function (model) {
 												_0: _mdgriffith$stylish_elephants$Element_Border$rounded(20),
 												_1: {
 													ctor: '::',
-													_0: _lucamug$elm_pages_editor$Element_Hack$style(
+													_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 														{ctor: '_Tuple2', _0: 'box-shadow', _1: 'rgba(10, 10, 10, 0.19) 5px 5px 5px 5px'}),
 													_1: {ctor: '[]'}
 												}
@@ -31321,7 +31301,7 @@ var _lucamug$elm_pages_editor$Main$viewDeviceFrame = function (model) {
 														_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$BlackTer)),
 													_1: {
 														ctor: '::',
-														_0: _lucamug$elm_pages_editor$Element_Hack$style(
+														_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 															{ctor: '_Tuple2', _0: 'box-shadow', _1: 'rgba(10, 10, 10, 0.19) 5px 5px 5px 5px'}),
 														_1: {ctor: '[]'}
 													}
@@ -31347,11 +31327,11 @@ var _lucamug$elm_pages_editor$Main$viewDeviceFrame = function (model) {
 														_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$Black)),
 													_1: {
 														ctor: '::',
-														_0: _lucamug$elm_pages_editor$Element_Hack$style(
+														_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 															{ctor: '_Tuple2', _0: 'justify-content', _1: 'normal'}),
 														_1: {
 															ctor: '::',
-															_0: _lucamug$elm_pages_editor$Element_Hack$style(
+															_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 																{
 																	ctor: '_Tuple2',
 																	_0: 'max-height',
@@ -31473,7 +31453,7 @@ var _lucamug$elm_pages_editor$Main$viewApp = function (model) {
 										_0: _mdgriffith$stylish_elephants$Element$padding(16),
 										_1: {
 											ctor: '::',
-											_0: _lucamug$elm_pages_editor$Element_Hack$style(
+											_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 												{ctor: '_Tuple2', _0: 'max-width', _1: '600px'}),
 											_1: {ctor: '[]'}
 										}
@@ -31492,13 +31472,18 @@ var _lucamug$elm_pages_editor$Main$viewApp = function (model) {
 		});
 };
 var _lucamug$elm_pages_editor$Main$viewTwoColumnsView = function (model) {
+	var withoutDeviceFrame = _elm_lang$core$Native_Utils.cmp(model.device.width, 740) < 0;
+	var portionLeft = withoutDeviceFrame ? 1 : 3;
+	var portionRight = withoutDeviceFrame ? 1 : 2;
+	var widthLeft = _elm_lang$core$Basics$floor(
+		_elm_lang$core$Basics$toFloat(model.device.width) / (portionRight + portionLeft)) * portionLeft;
 	var commonAttr = {
 		ctor: '::',
-		_0: _lucamug$elm_pages_editor$Element_Hack$style(
+		_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 			{ctor: '_Tuple2', _0: 'max-height', _1: '100vh'}),
 		_1: {
 			ctor: '::',
-			_0: _lucamug$elm_pages_editor$Element_Hack$style(
+			_0: _lucamug$elm_pages_editor$StyleElementsHack$style(
 				{ctor: '_Tuple2', _0: 'max-width', _1: '100vw'}),
 			_1: {
 				ctor: '::',
@@ -31525,7 +31510,22 @@ var _lucamug$elm_pages_editor$Main$viewTwoColumnsView = function (model) {
 						ctor: '::',
 						_0: _mdgriffith$stylish_elephants$Element_Background$color(
 							_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$Grey)),
-						_1: {ctor: '[]'}
+						_1: {
+							ctor: '::',
+							_0: _mdgriffith$stylish_elephants$Element_Border$widthEach(
+								{top: 0, left: 0, bottom: 0, right: 1}),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$stylish_elephants$Element_Background$color(
+									_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$Grey)),
+								_1: {
+									ctor: '::',
+									_0: _mdgriffith$stylish_elephants$Element$width(
+										_mdgriffith$stylish_elephants$Element$fillPortion(portionLeft)),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
 					}),
 				{
 					ctor: '::',
@@ -31533,19 +31533,26 @@ var _lucamug$elm_pages_editor$Main$viewTwoColumnsView = function (model) {
 						_mdgriffith$stylish_elephants$Element$column,
 						{
 							ctor: '::',
-							_0: A2(_mdgriffith$stylish_elephants$Element$paddingXY, 0, 50),
+							_0: A2(_mdgriffith$stylish_elephants$Element$paddingXY, 0, 0),
 							_1: {
 								ctor: '::',
 								_0: _mdgriffith$stylish_elephants$Element$spacing(50),
 								_1: {ctor: '[]'}
 							}
 						},
-						{
+						withoutDeviceFrame ? {
+							ctor: '::',
+							_0: A2(
+								_mdgriffith$stylish_elephants$Element$map,
+								_lucamug$elm_pages_editor$Main$MsgForm,
+								A2(_lucamug$elm_pages_editor$Pages_Form$viewElement, widthLeft, model.modelForm)),
+							_1: {ctor: '[]'}
+						} : {
 							ctor: '::',
 							_0: _lucamug$elm_pages_editor$Main$viewDeviceFrame(model),
 							_1: {
 								ctor: '::',
-								_0: _lucamug$elm_pages_editor$Main$viewApiResopnse(model),
+								_0: _lucamug$elm_pages_editor$Main$viewApiResponse(model),
 								_1: {ctor: '[]'}
 							}
 						}),
@@ -31558,7 +31565,12 @@ var _lucamug$elm_pages_editor$Main$viewTwoColumnsView = function (model) {
 					A2(
 						_elm_lang$core$Basics_ops['++'],
 						commonAttr,
-						{ctor: '[]'}),
+						{
+							ctor: '::',
+							_0: _mdgriffith$stylish_elephants$Element$width(
+								_mdgriffith$stylish_elephants$Element$fillPortion(portionRight)),
+							_1: {ctor: '[]'}
+						}),
 					{
 						ctor: '::',
 						_0: _lucamug$elm_pages_editor$Main$viewApp(model),
@@ -31830,7 +31842,7 @@ var _lucamug$elm_pages_editor$Main$update = F2(
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{
-							device: _lucamug$elm_pages_editor$Element_Hack$classifyDevice(_p9._0)
+							device: _lucamug$elm_pages_editor$StyleElementsHack$classifyDevice(_p9._0)
 						}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
@@ -31896,7 +31908,7 @@ var _lucamug$elm_pages_editor$Main$initModel = F2(
 			title: 'Elm Pages Editor',
 			localStorage: flag.localStorage,
 			packVersion: flag.packVersion,
-			device: _lucamug$elm_pages_editor$Element_Hack$classifyDevice(
+			device: _lucamug$elm_pages_editor$StyleElementsHack$classifyDevice(
 				A2(_elm_lang$window$Window$Size, flag.width, flag.height)),
 			deviceType: _lucamug$elm_pages_editor$Main$IPhone7,
 			fullscreen: false,
@@ -32125,7 +32137,7 @@ var _lucamug$elm_pages_editor$Main$view = function (model) {
 				}
 			}
 		},
-		_elm_lang$core$Native_Utils.eq(model.route, _lucamug$elm_pages_editor$Main$Form) ? A2(_lucamug$elm_pages_editor$Main$routeView, _lucamug$elm_pages_editor$Main$Form, model) : ((_elm_lang$core$Native_Utils.cmp(model.device.width, 900) < 0) ? _lucamug$elm_pages_editor$Main$viewApp(model) : _lucamug$elm_pages_editor$Main$viewTwoColumnsView(model)));
+		_elm_lang$core$Native_Utils.eq(model.route, _lucamug$elm_pages_editor$Main$Form) ? A2(_lucamug$elm_pages_editor$Main$routeView, _lucamug$elm_pages_editor$Main$Form, model) : ((_elm_lang$core$Native_Utils.cmp(model.device.width, 320 * 2) < 0) ? _lucamug$elm_pages_editor$Main$viewApp(model) : _lucamug$elm_pages_editor$Main$viewTwoColumnsView(model)));
 };
 var _lucamug$elm_pages_editor$Main$main = A2(
 	_elm_lang$navigation$Navigation$programWithFlags,
