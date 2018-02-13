@@ -31982,12 +31982,28 @@ var _lucamug$elm_pages_editor$Main$viewDeviceMenu = {
 				_1: {
 					ctor: '::',
 					_0: _mdgriffith$stylish_elephants$Element_Events$onClick(
-						_lucamug$elm_pages_editor$Main$ChangeDevice(_lucamug$elm_pages_editor$Main$IPhoneX)),
+						_lucamug$elm_pages_editor$Main$ChangeDevice(_lucamug$elm_pages_editor$Main$IPhone7)),
 					_1: {ctor: '[]'}
 				}
 			},
-			_mdgriffith$stylish_elephants$Element$text('iPhone X')),
-		_1: {ctor: '[]'}
+			_mdgriffith$stylish_elephants$Element$text('iPhone 7')),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_mdgriffith$stylish_elephants$Element$el,
+				{
+					ctor: '::',
+					_0: _mdgriffith$stylish_elephants$Element$pointer,
+					_1: {
+						ctor: '::',
+						_0: _mdgriffith$stylish_elephants$Element_Events$onClick(
+							_lucamug$elm_pages_editor$Main$ChangeDevice(_lucamug$elm_pages_editor$Main$IPhoneX)),
+						_1: {ctor: '[]'}
+					}
+				},
+				_mdgriffith$stylish_elephants$Element$text('iPhone X')),
+			_1: {ctor: '[]'}
+		}
 	}
 };
 var _lucamug$elm_pages_editor$Main$viewSubMenuRight = function (model) {
@@ -32109,7 +32125,7 @@ var _lucamug$elm_pages_editor$Main$view = function (model) {
 				}
 			}
 		},
-		_elm_lang$core$Native_Utils.eq(model.route, _lucamug$elm_pages_editor$Main$Form) ? A2(_lucamug$elm_pages_editor$Main$routeView, _lucamug$elm_pages_editor$Main$Form, model) : _lucamug$elm_pages_editor$Main$viewTwoColumnsView(model));
+		_elm_lang$core$Native_Utils.eq(model.route, _lucamug$elm_pages_editor$Main$Form) ? A2(_lucamug$elm_pages_editor$Main$routeView, _lucamug$elm_pages_editor$Main$Form, model) : ((_elm_lang$core$Native_Utils.cmp(model.device.width, 900) < 0) ? _lucamug$elm_pages_editor$Main$viewApp(model) : _lucamug$elm_pages_editor$Main$viewTwoColumnsView(model)));
 };
 var _lucamug$elm_pages_editor$Main$main = A2(
 	_elm_lang$navigation$Navigation$programWithFlags,
