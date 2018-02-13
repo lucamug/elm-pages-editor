@@ -657,7 +657,7 @@ view model =
     <|
         if model.route == Form then
             routeView Form model
-        else if model.device.width < (320 * 2) then
+        else if model.device.width < 590 then
             viewApp model
         else
             viewTwoColumnsView model

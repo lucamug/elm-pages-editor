@@ -32137,7 +32137,7 @@ var _lucamug$elm_pages_editor$Main$view = function (model) {
 				}
 			}
 		},
-		_elm_lang$core$Native_Utils.eq(model.route, _lucamug$elm_pages_editor$Main$Form) ? A2(_lucamug$elm_pages_editor$Main$routeView, _lucamug$elm_pages_editor$Main$Form, model) : ((_elm_lang$core$Native_Utils.cmp(model.device.width, 320 * 2) < 0) ? _lucamug$elm_pages_editor$Main$viewApp(model) : _lucamug$elm_pages_editor$Main$viewTwoColumnsView(model)));
+		_elm_lang$core$Native_Utils.eq(model.route, _lucamug$elm_pages_editor$Main$Form) ? A2(_lucamug$elm_pages_editor$Main$routeView, _lucamug$elm_pages_editor$Main$Form, model) : ((_elm_lang$core$Native_Utils.cmp(model.device.width, 590) < 0) ? _lucamug$elm_pages_editor$Main$viewApp(model) : _lucamug$elm_pages_editor$Main$viewTwoColumnsView(model)));
 };
 var _lucamug$elm_pages_editor$Main$main = A2(
 	_elm_lang$navigation$Navigation$programWithFlags,
