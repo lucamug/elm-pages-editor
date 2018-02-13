@@ -657,6 +657,8 @@ view model =
     <|
         if model.route == Form then
             routeView Form model
+        else if model.device.width < 900 then
+            viewApp model
         else
             viewTwoColumnsView model
 
@@ -969,8 +971,7 @@ viewSubMenuRight model =
 viewDeviceMenu : List (Element Msg)
 viewDeviceMenu =
     [ el [ pointer, Events.onClick <| ChangeDevice IPhone5 ] <| text "iPhone 5"
-
-    --, el [ pointer, Events.onClick <| ChangeDevice IPhone7 ] <| text "iPhone 7"
+    , el [ pointer, Events.onClick <| ChangeDevice IPhone7 ] <| text "iPhone 7"
     , el [ pointer, Events.onClick <| ChangeDevice IPhoneX ] <| text "iPhone X"
 
     --, el [ pointer, Events.onClick <| ChangeDevice IPad ] <| text "iPad"
