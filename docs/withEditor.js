@@ -29621,7 +29621,7 @@ var _lucamug$elm_pages_editor$Pages_Form$view2 = F2(
 									_1: {
 										ctor: '::',
 										_0: _mdgriffith$stylish_elephants$Element_Border$widthEach(
-											{bottom: 0, left: 0, right: 0, top: 4}),
+											{bottom: 0, left: 0, right: 0, top: 0}),
 										_1: {
 											ctor: '::',
 											_0: _mdgriffith$stylish_elephants$Element_Border$color(
@@ -29727,7 +29727,7 @@ var _lucamug$elm_pages_editor$Pages_Form$view2 = F2(
 									{
 										ctor: '::',
 										_0: _mdgriffith$stylish_elephants$Element_Border$widthEach(
-											{bottom: 0, left: 0, right: 0, top: 4}),
+											{bottom: 0, left: 0, right: 0, top: 0}),
 										_1: {
 											ctor: '::',
 											_0: _mdgriffith$stylish_elephants$Element_Border$color(

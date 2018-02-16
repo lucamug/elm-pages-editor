@@ -475,7 +475,7 @@ view2 viewPort model =
         [ structure
             [ column
                 ([ Hack.style ( "max-width", toString maxWidthBoxOnTheLeft ++ "px" )
-                 , Border.widthEach { bottom = 0, left = 0, right = 0, top = 4 }
+                 , Border.widthEach { bottom = 0, left = 0, right = 0, top = 0 }
                  , Border.color <| color model.conf.color
                  ]
                     ++ commonAttr
@@ -520,7 +520,7 @@ view2 viewPort model =
                     )
                 ]
             , column
-                ([ Border.widthEach { bottom = 0, left = 0, right = 0, top = 4 }
+                ([ Border.widthEach { bottom = 0, left = 0, right = 0, top = 0 }
                  , Border.color <| color model.conf.color
                  , Hack.style ( "max-width", toString maxWidthBoxOnTheRight ++ "px" )
                  ]
