@@ -29754,32 +29754,28 @@ var _lucamug$elm_pages_editor$Pages_Form$view2 = F2(
 										_mdgriffith$stylish_elephants$Element$paragraph,
 										{
 											ctor: '::',
-											_0: _mdgriffith$stylish_elephants$Element_Font$size(20),
-											_1: {
-												ctor: '::',
-												_0: A2(_mdgriffith$stylish_elephants$Element$paddingXY, 0, 14),
-												_1: {
-													ctor: '::',
-													_0: _mdgriffith$stylish_elephants$Element$alignLeft,
-													_1: {ctor: '[]'}
-												}
-											}
+											_0: _mdgriffith$stylish_elephants$Element$spacing(20),
+											_1: {ctor: '[]'}
 										},
 										{
 											ctor: '::',
-											_0: _mdgriffith$stylish_elephants$Element$text('Create a new account'),
-											_1: {ctor: '[]'}
-										}),
-									_1: {
-										ctor: '::',
-										_0: A2(
-											_mdgriffith$stylish_elephants$Element$paragraph,
-											{
-												ctor: '::',
-												_0: _mdgriffith$stylish_elephants$Element$spacing(16),
-												_1: {ctor: '[]'}
-											},
-											{
+											_0: A2(
+												_mdgriffith$stylish_elephants$Element$el,
+												{
+													ctor: '::',
+													_0: _mdgriffith$stylish_elephants$Element_Font$size(20),
+													_1: {
+														ctor: '::',
+														_0: A2(_mdgriffith$stylish_elephants$Element$paddingXY, 0, 14),
+														_1: {
+															ctor: '::',
+															_0: _mdgriffith$stylish_elephants$Element$alignLeft,
+															_1: {ctor: '[]'}
+														}
+													}
+												},
+												_mdgriffith$stylish_elephants$Element$text('Midway upon the journey')),
+											_1: {
 												ctor: '::',
 												_0: A2(
 													_mdgriffith$stylish_elephants$Element$el,
@@ -29837,13 +29833,13 @@ var _lucamug$elm_pages_editor$Pages_Form$view2 = F2(
 																		_1: {ctor: '[]'}
 																	}),
 																_elm_lang$core$Maybe$Nothing,
-																'Create Account')),
+																'Midway upon the journey')),
 														_1: {ctor: '[]'}
 													}
 												}
-											}),
-										_1: {ctor: '[]'}
-									}
+											}
+										}),
+									_1: {ctor: '[]'}
 								}),
 							_1: {ctor: '[]'}
 						}

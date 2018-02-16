@@ -527,15 +527,14 @@ view2 viewPort model =
                     ++ commonAttr
                     ++ extraAttr
                 )
-                [ paragraph
-                    [ Font.size 20
-                    , paddingXY 0 14
-                    , alignLeft
-                    ]
-                    [ text "Create a new account"
-                    ]
-                , paragraph [ spacing 16 ]
-                    [ el [] <| text "Ah me! how hard a thing it is to say\nWhat was this forest savage, rough, and stern,\nWhich in the very thought renews the fear."
+                [ paragraph [ spacing 20 ]
+                    [ el
+                        [ Font.size 20
+                        , paddingXY 0 14
+                        , alignLeft
+                        ]
+                        (text "Midway upon the journey")
+                    , el [] <| text "Ah me! how hard a thing it is to say\nWhat was this forest savage, rough, and stern,\nWhich in the very thought renews the fear."
                     , el [] <| text "So bitter is it, death is little more;\nBut of the good to treat, which there I found,\nSpeak will I of the other things I saw there."
                     , el
                         [ paddingXY 0 30
@@ -563,7 +562,7 @@ view2 viewPort model =
                                    ]
                             )
                             Nothing
-                            "Create Account"
+                            "Midway upon the journey"
                         )
                     ]
                 ]
