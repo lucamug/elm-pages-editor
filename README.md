@@ -1,8 +1,5 @@
 # Elm Pages Editor
 
-* [Demo With Editor](http://guupa.com/elm-pages-editor/)
-* [Demo Standalone](http://guupa.com/elm-pages-editor/indexStandalone.html)
-
 Inspired by/Made with
 
 * [elm-lang](http://elm-lang.org/)
