@@ -406,8 +406,8 @@ viewInput model field inputType inputName =
         ]
 
 
-view2 : Int -> Model -> Element Msg
-view2 viewPort model =
+viewMain : Int -> Model -> Element Msg
+viewMain viewPort model =
     let
         fontColor =
             if model.conf.negative then
@@ -633,7 +633,7 @@ viewElement viewPort model =
                 , padding 16
                 , centerY
                 ]
-                [ view2 viewPort model
+                [ viewMain viewPort model
                 ]
             )
         ]

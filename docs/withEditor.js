@@ -26826,9 +26826,6 @@ var _rtfeldman$elm_validate$Validate$all = function (validators) {
 	return validator;
 };
 
-var _lucamug$elm_pages_editor$Pages_Form$subscriptions = function (model) {
-	return _elm_lang$core$Platform_Sub$none;
-};
 var _lucamug$elm_pages_editor$Pages_Form$svgShow = function (color) {
 	return A2(
 		_elm_lang$svg$Svg$svg,
@@ -27080,10 +27077,27 @@ var _lucamug$elm_pages_editor$Pages_Form$confEncoder = function (conf) {
 			}
 		});
 };
-var _lucamug$elm_pages_editor$Pages_Form$Model = F9(
-	function (a, b, c, d, e, f, g, h, i) {
-		return {errors: a, response: b, focus: c, showErrors: d, showPassword: e, formState: f, fieldEmail: g, fieldPassword: h, conf: i};
-	});
+var _lucamug$elm_pages_editor$Pages_Form$Model = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return {errors: a, response: b, focus: c, showErrors: d, showPassword: e, formState: f, fieldEmail: g, fieldPassword: h, conf: i, device: j};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
 var _lucamug$elm_pages_editor$Pages_Form$Configuration = F6(
 	function (a, b, c, d, e, f) {
 		return {negative: a, logo: b, color: c, background: d, title: e, submitText: f};
@@ -27134,14 +27148,21 @@ var _lucamug$elm_pages_editor$Pages_Form$initModel = function (configuration) {
 		formState: _lucamug$elm_pages_editor$Pages_Form$Editing,
 		fieldEmail: '',
 		fieldPassword: '',
-		conf: conf
+		conf: conf,
+		device: A2(_elm_lang$window$Window$Size, 600, 600)
 	};
+};
+var _lucamug$elm_pages_editor$Pages_Form$WindowSize = function (a) {
+	return {ctor: 'WindowSize', _0: a};
+};
+var _lucamug$elm_pages_editor$Pages_Form$subscriptions = function (model) {
+	return _elm_lang$window$Window$resizes(_lucamug$elm_pages_editor$Pages_Form$WindowSize);
 };
 var _lucamug$elm_pages_editor$Pages_Form$init = function (flag) {
 	return {
 		ctor: '_Tuple2',
 		_0: _lucamug$elm_pages_editor$Pages_Form$initModel(flag),
-		_1: _elm_lang$core$Platform_Cmd$none
+		_1: A2(_elm_lang$core$Task$perform, _lucamug$elm_pages_editor$Pages_Form$WindowSize, _elm_lang$window$Window$size)
 	};
 };
 var _lucamug$elm_pages_editor$Pages_Form$ToggleShowPasssword = {ctor: 'ToggleShowPasssword'};
@@ -27206,6 +27227,14 @@ var _lucamug$elm_pages_editor$Pages_Form$update = F2(
 		switch (_p10.ctor) {
 			case 'NoOp':
 				return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+			case 'WindowSize':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{device: _p10._0}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
 			case 'SubmitForm':
 				var _p11 = _lucamug$elm_pages_editor$Pages_Form$validate(model);
 				if (_p11.ctor === '[]') {
@@ -27432,7 +27461,7 @@ var _lucamug$elm_pages_editor$Pages_Form$viewInput = F4(
 				_1: {ctor: '[]'}
 			});
 	});
-var _lucamug$elm_pages_editor$Pages_Form$view2 = F2(
+var _lucamug$elm_pages_editor$Pages_Form$viewMain = F2(
 	function (viewPort, model) {
 		var twoBoxesInARowWithNarrowSpacing = _elm_lang$core$Native_Utils.cmp(viewPort, 940) < 0;
 		var twoBoxesInAColumn = _elm_lang$core$Native_Utils.cmp(viewPort, 720) < 0;
@@ -27906,7 +27935,7 @@ var _lucamug$elm_pages_editor$Pages_Form$viewElement = F2(
 							},
 							{
 								ctor: '::',
-								_0: A2(_lucamug$elm_pages_editor$Pages_Form$view2, viewPort, model),
+								_0: A2(_lucamug$elm_pages_editor$Pages_Form$viewMain, viewPort, model),
 								_1: {ctor: '[]'}
 							})),
 					_1: {ctor: '[]'}
@@ -27958,7 +27987,7 @@ var _lucamug$elm_pages_editor$Pages_Form$view = function (model) {
 				}
 			}
 		},
-		A2(_lucamug$elm_pages_editor$Pages_Form$viewElement, 999, model));
+		A2(_lucamug$elm_pages_editor$Pages_Form$viewElement, model.device.width, model));
 };
 var _lucamug$elm_pages_editor$Pages_Form$main = _elm_lang$html$Html$programWithFlags(
 	{init: _lucamug$elm_pages_editor$Pages_Form$init, view: _lucamug$elm_pages_editor$Pages_Form$view, update: _lucamug$elm_pages_editor$Pages_Form$update, subscriptions: _lucamug$elm_pages_editor$Pages_Form$subscriptions})(_elm_lang$core$Json_Decode$string);
@@ -28144,68 +28173,6 @@ var _lucamug$elm_pages_editor$Main$viewMenuStickyRight = F2(
 				},
 				menuItems));
 	});
-var _lucamug$elm_pages_editor$Main$viewHeader = function (model) {
-	return A2(
-		_mdgriffith$stylish_elephants$Element$column,
-		{
-			ctor: '::',
-			_0: _mdgriffith$stylish_elephants$Element$paddingEach(
-				{top: 40, left: 0, bottom: 0, right: 0}),
-			_1: {ctor: '[]'}
-		},
-		{
-			ctor: '::',
-			_0: A2(
-				_lucamug$elm_pages_editor$Main$h1,
-				{
-					ctor: '::',
-					_0: _mdgriffith$stylish_elephants$Element$centerX,
-					_1: {
-						ctor: '::',
-						_0: _mdgriffith$stylish_elephants$Element_Font$color(
-							_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$Black)),
-						_1: {
-							ctor: '::',
-							_0: _mdgriffith$stylish_elephants$Element_Font$size(32),
-							_1: {
-								ctor: '::',
-								_0: _mdgriffith$stylish_elephants$Element$padding(0),
-								_1: {ctor: '[]'}
-							}
-						}
-					}
-				},
-				A2(
-					_mdgriffith$stylish_elephants$Element$row,
-					{
-						ctor: '::',
-						_0: _mdgriffith$stylish_elephants$Element$spacing(10),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Pencil, 24),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_mdgriffith$stylish_elephants$Element$el,
-								{
-									ctor: '::',
-									_0: _mdgriffith$stylish_elephants$Element_Font$color(
-										_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$GreyLight)),
-									_1: {
-										ctor: '::',
-										_0: _mdgriffith$stylish_elephants$Element_Font$bold,
-										_1: {ctor: '[]'}
-									}
-								},
-								_mdgriffith$stylish_elephants$Element$text(model.title)),
-							_1: {ctor: '[]'}
-						}
-					})),
-			_1: {ctor: '[]'}
-		});
-};
 var _lucamug$elm_pages_editor$Main$genericSpaceFromSide = 16;
 var _lucamug$elm_pages_editor$Main$viewApiResponse = function (model) {
 	return A2(
@@ -28487,6 +28454,152 @@ var _lucamug$elm_pages_editor$Main$routePathJoined = function (route) {
 			_elm_lang$core$String$join,
 			_lucamug$elm_pages_editor$Main$pathSeparator,
 			_lucamug$elm_pages_editor$Main$routePath(route)));
+};
+var _lucamug$elm_pages_editor$Main$version = '1.0.0';
+var _lucamug$elm_pages_editor$Main$viewHeader = function (model) {
+	return A2(
+		_mdgriffith$stylish_elephants$Element$column,
+		{
+			ctor: '::',
+			_0: _mdgriffith$stylish_elephants$Element$paddingEach(
+				{top: 40, left: 20, bottom: 0, right: 20}),
+			_1: {
+				ctor: '::',
+				_0: _mdgriffith$stylish_elephants$Element$spacing(5),
+				_1: {ctor: '[]'}
+			}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_lucamug$elm_pages_editor$Main$h1,
+				{
+					ctor: '::',
+					_0: _mdgriffith$stylish_elephants$Element$centerX,
+					_1: {
+						ctor: '::',
+						_0: _mdgriffith$stylish_elephants$Element_Font$color(
+							_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$Black)),
+						_1: {
+							ctor: '::',
+							_0: _mdgriffith$stylish_elephants$Element_Font$size(32),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$stylish_elephants$Element$padding(0),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				},
+				A2(
+					_mdgriffith$stylish_elephants$Element$row,
+					{
+						ctor: '::',
+						_0: _mdgriffith$stylish_elephants$Element$spacing(10),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Pencil, 24),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_mdgriffith$stylish_elephants$Element$el,
+								{
+									ctor: '::',
+									_0: _mdgriffith$stylish_elephants$Element_Font$color(
+										_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$GreyLight)),
+									_1: {
+										ctor: '::',
+										_0: _mdgriffith$stylish_elephants$Element_Font$bold,
+										_1: {ctor: '[]'}
+									}
+								},
+								_mdgriffith$stylish_elephants$Element$text(model.title)),
+							_1: {ctor: '[]'}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_mdgriffith$stylish_elephants$Element$paragraph,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _mdgriffith$stylish_elephants$Element$text('This is a proof of concept written using Elm and style-elements.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_mdgriffith$stylish_elephants$Element$paragraph,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _mdgriffith$stylish_elephants$Element$text('This combination create a level of abstraction on top of Html/CSS/Javascript to quickly create reliable web apps just writing Elm+Style-Elements.'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_mdgriffith$stylish_elephants$Element$paragraph,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _mdgriffith$stylish_elephants$Element$text('Post: '),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_mdgriffith$stylish_elephants$Element$link,
+										{
+											ctor: '::',
+											_0: _mdgriffith$stylish_elephants$Element_Font$color(
+												_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$Primary)),
+											_1: {ctor: '[]'}
+										},
+										{
+											url: 'https://medium.com/@l.mugnaini/is-the-future-of-front-end-development-without-html-css-and-javascript-e7bb0877980e',
+											label: _mdgriffith$stylish_elephants$Element$text('Is the future of front-end development without Html CSS and Javascript?')
+										}),
+									_1: {ctor: '[]'}
+								}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_mdgriffith$stylish_elephants$Element$paragraph,
+								{ctor: '[]'},
+								{
+									ctor: '::',
+									_0: _mdgriffith$stylish_elephants$Element$text('More info and source code at '),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_mdgriffith$stylish_elephants$Element$link,
+											{
+												ctor: '::',
+												_0: _mdgriffith$stylish_elephants$Element_Font$color(
+													_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$Primary)),
+												_1: {ctor: '[]'}
+											},
+											{
+												url: 'https://github.com/lucamug/elm-pages-editor.git',
+												label: _mdgriffith$stylish_elephants$Element$text('https://github.com/lucamug/elm-pages-editor.git')
+											}),
+										_1: {ctor: '[]'}
+									}
+								}),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$stylish_elephants$Element$text(
+									A2(_elm_lang$core$Basics_ops['++'], 'Version ', _lucamug$elm_pages_editor$Main$version)),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			}
+		});
 };
 var _lucamug$elm_pages_editor$Main$urlChange = _elm_lang$core$Native_Platform.outgoingPort(
 	'urlChange',

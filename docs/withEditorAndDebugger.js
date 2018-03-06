@@ -31420,7 +31420,7 @@ var _lucamug$elm_pages_editor$Pages_Form$viewInput = F4(
 				_1: {ctor: '[]'}
 			});
 	});
-var _lucamug$elm_pages_editor$Pages_Form$view2 = F2(
+var _lucamug$elm_pages_editor$Pages_Form$viewMain = F2(
 	function (viewPort, model) {
 		var twoBoxesInARowWithNarrowSpacing = _elm_lang$core$Native_Utils.cmp(viewPort, 940) < 0;
 		var twoBoxesInAColumn = _elm_lang$core$Native_Utils.cmp(viewPort, 720) < 0;
@@ -31894,7 +31894,7 @@ var _lucamug$elm_pages_editor$Pages_Form$viewElement = F2(
 							},
 							{
 								ctor: '::',
-								_0: A2(_lucamug$elm_pages_editor$Pages_Form$view2, viewPort, model),
+								_0: A2(_lucamug$elm_pages_editor$Pages_Form$viewMain, viewPort, model),
 								_1: {ctor: '[]'}
 							})),
 					_1: {ctor: '[]'}
@@ -32132,68 +32132,6 @@ var _lucamug$elm_pages_editor$Main$viewMenuStickyRight = F2(
 				},
 				menuItems));
 	});
-var _lucamug$elm_pages_editor$Main$viewHeader = function (model) {
-	return A2(
-		_mdgriffith$stylish_elephants$Element$column,
-		{
-			ctor: '::',
-			_0: _mdgriffith$stylish_elephants$Element$paddingEach(
-				{top: 40, left: 0, bottom: 0, right: 0}),
-			_1: {ctor: '[]'}
-		},
-		{
-			ctor: '::',
-			_0: A2(
-				_lucamug$elm_pages_editor$Main$h1,
-				{
-					ctor: '::',
-					_0: _mdgriffith$stylish_elephants$Element$centerX,
-					_1: {
-						ctor: '::',
-						_0: _mdgriffith$stylish_elephants$Element_Font$color(
-							_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$Black)),
-						_1: {
-							ctor: '::',
-							_0: _mdgriffith$stylish_elephants$Element_Font$size(32),
-							_1: {
-								ctor: '::',
-								_0: _mdgriffith$stylish_elephants$Element$padding(0),
-								_1: {ctor: '[]'}
-							}
-						}
-					}
-				},
-				A2(
-					_mdgriffith$stylish_elephants$Element$row,
-					{
-						ctor: '::',
-						_0: _mdgriffith$stylish_elephants$Element$spacing(10),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Pencil, 24),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_mdgriffith$stylish_elephants$Element$el,
-								{
-									ctor: '::',
-									_0: _mdgriffith$stylish_elephants$Element_Font$color(
-										_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$GreyLight)),
-									_1: {
-										ctor: '::',
-										_0: _mdgriffith$stylish_elephants$Element_Font$bold,
-										_1: {ctor: '[]'}
-									}
-								},
-								_mdgriffith$stylish_elephants$Element$text(model.title)),
-							_1: {ctor: '[]'}
-						}
-					})),
-			_1: {ctor: '[]'}
-		});
-};
 var _lucamug$elm_pages_editor$Main$genericSpaceFromSide = 16;
 var _lucamug$elm_pages_editor$Main$viewApiResponse = function (model) {
 	return A2(
@@ -32477,6 +32415,151 @@ var _lucamug$elm_pages_editor$Main$routePathJoined = function (route) {
 			_lucamug$elm_pages_editor$Main$routePath(route)));
 };
 var _lucamug$elm_pages_editor$Main$version = '1.0.0';
+var _lucamug$elm_pages_editor$Main$viewHeader = function (model) {
+	return A2(
+		_mdgriffith$stylish_elephants$Element$column,
+		{
+			ctor: '::',
+			_0: _mdgriffith$stylish_elephants$Element$paddingEach(
+				{top: 40, left: 20, bottom: 0, right: 20}),
+			_1: {
+				ctor: '::',
+				_0: _mdgriffith$stylish_elephants$Element$spacing(5),
+				_1: {ctor: '[]'}
+			}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_lucamug$elm_pages_editor$Main$h1,
+				{
+					ctor: '::',
+					_0: _mdgriffith$stylish_elephants$Element$centerX,
+					_1: {
+						ctor: '::',
+						_0: _mdgriffith$stylish_elephants$Element_Font$color(
+							_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$Black)),
+						_1: {
+							ctor: '::',
+							_0: _mdgriffith$stylish_elephants$Element_Font$size(32),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$stylish_elephants$Element$padding(0),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				},
+				A2(
+					_mdgriffith$stylish_elephants$Element$row,
+					{
+						ctor: '::',
+						_0: _mdgriffith$stylish_elephants$Element$spacing(10),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: A2(_lucamug$elm_pages_editor$Framework_Logo$logo, _lucamug$elm_pages_editor$Framework_Logo$Pencil, 24),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_mdgriffith$stylish_elephants$Element$el,
+								{
+									ctor: '::',
+									_0: _mdgriffith$stylish_elephants$Element_Font$color(
+										_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$GreyLight)),
+									_1: {
+										ctor: '::',
+										_0: _mdgriffith$stylish_elephants$Element_Font$bold,
+										_1: {ctor: '[]'}
+									}
+								},
+								_mdgriffith$stylish_elephants$Element$text(model.title)),
+							_1: {ctor: '[]'}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_mdgriffith$stylish_elephants$Element$paragraph,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _mdgriffith$stylish_elephants$Element$text('This is a proof of concept written using Elm and style-elements.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_mdgriffith$stylish_elephants$Element$paragraph,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _mdgriffith$stylish_elephants$Element$text('This combination create a level of abstraction on top of Html/CSS/Javascript to quickly create reliable web apps just writing Elm+Style-Elements.'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_mdgriffith$stylish_elephants$Element$paragraph,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _mdgriffith$stylish_elephants$Element$text('Post: '),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_mdgriffith$stylish_elephants$Element$link,
+										{
+											ctor: '::',
+											_0: _mdgriffith$stylish_elephants$Element_Font$color(
+												_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$Primary)),
+											_1: {ctor: '[]'}
+										},
+										{
+											url: 'https://medium.com/@l.mugnaini/is-the-future-of-front-end-development-without-html-css-and-javascript-e7bb0877980e',
+											label: _mdgriffith$stylish_elephants$Element$text('Is the future of front-end development without Html CSS and Javascript?')
+										}),
+									_1: {ctor: '[]'}
+								}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_mdgriffith$stylish_elephants$Element$paragraph,
+								{ctor: '[]'},
+								{
+									ctor: '::',
+									_0: _mdgriffith$stylish_elephants$Element$text('More info and source code at '),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_mdgriffith$stylish_elephants$Element$link,
+											{
+												ctor: '::',
+												_0: _mdgriffith$stylish_elephants$Element_Font$color(
+													_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$Primary)),
+												_1: {ctor: '[]'}
+											},
+											{
+												url: 'https://github.com/lucamug/elm-pages-editor.git',
+												label: _mdgriffith$stylish_elephants$Element$text('https://github.com/lucamug/elm-pages-editor.git')
+											}),
+										_1: {ctor: '[]'}
+									}
+								}),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$stylish_elephants$Element$text(
+									A2(_elm_lang$core$Basics_ops['++'], 'Version ', _lucamug$elm_pages_editor$Main$version)),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			}
+		});
+};
 var _lucamug$elm_pages_editor$Main$urlChange = _elm_lang$core$Native_Platform.outgoingPort(
 	'urlChange',
 	function (v) {
@@ -33063,45 +33146,7 @@ var _lucamug$elm_pages_editor$Main$viewEditor = function (model) {
 													_1: {ctor: '[]'}
 												}
 											}),
-										_1: {
-											ctor: '::',
-											_0: A2(
-												_mdgriffith$stylish_elephants$Element$column,
-												{ctor: '[]'},
-												{
-													ctor: '::',
-													_0: _mdgriffith$stylish_elephants$Element$text(
-														A2(_elm_lang$core$Basics_ops['++'], 'Version ', _lucamug$elm_pages_editor$Main$version)),
-													_1: {
-														ctor: '::',
-														_0: A2(
-															_mdgriffith$stylish_elephants$Element$paragraph,
-															{ctor: '[]'},
-															{
-																ctor: '::',
-																_0: _mdgriffith$stylish_elephants$Element$text('Source code at '),
-																_1: {
-																	ctor: '::',
-																	_0: A2(
-																		_mdgriffith$stylish_elephants$Element$link,
-																		{
-																			ctor: '::',
-																			_0: _mdgriffith$stylish_elephants$Element_Font$color(
-																				_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$Primary)),
-																			_1: {ctor: '[]'}
-																		},
-																		{
-																			url: 'https://github.com/lucamug/elm-pages-editor.git',
-																			label: _mdgriffith$stylish_elephants$Element$text('https://github.com/lucamug/elm-pages-editor.git')
-																		}),
-																	_1: {ctor: '[]'}
-																}
-															}),
-														_1: {ctor: '[]'}
-													}
-												}),
-											_1: {ctor: '[]'}
-										}
+										_1: {ctor: '[]'}
 									}
 								}
 							}

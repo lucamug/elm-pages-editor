@@ -904,7 +904,9 @@ viewMenu model =
 viewHeader : Model -> Element Msg
 viewHeader model =
     column
-        [ paddingEach { top = 40, left = 0, bottom = 0, right = 0 } ]
+        [ paddingEach { top = 40, left = 20, bottom = 0, right = 20 }
+        , spacing 5
+        ]
         [ h1
             [ centerX
             , Font.color <| color Black
@@ -921,6 +923,23 @@ viewHeader model =
                   <|
                     text model.title
                 ]
+        , paragraph []
+            [ text "This is a proof of concept written using Elm and style-elements." ]
+        , paragraph []
+            [ text "This combination create a level of abstraction on top of Html/CSS/Javascript to quickly create reliable web apps just writing Elm+Style-Elements." ]
+        , paragraph []
+            [ text "Post: "
+            , link
+                [ Font.color <| color Primary ]
+                { url = "https://medium.com/@l.mugnaini/is-the-future-of-front-end-development-without-html-css-and-javascript-e7bb0877980e", label = text "Is the future of front-end development without Html CSS and Javascript?" }
+            ]
+        , paragraph []
+            [ text "More info and source code at "
+            , link
+                [ Font.color <| color Primary ]
+                { url = "https://github.com/lucamug/elm-pages-editor.git", label = text "https://github.com/lucamug/elm-pages-editor.git" }
+            ]
+        , text <| "Version " ++ version
         ]
 
 
@@ -1101,15 +1120,6 @@ viewEditor model =
                 , label = Input.labelAbove [] <| text ""
                 , spellcheck = True
                 }
-            ]
-        , column []
-            [ text <| "Version " ++ version
-            , paragraph []
-                [ text "Source code at "
-                , link
-                    [ Font.color <| color Primary ]
-                    { url = "https://github.com/lucamug/elm-pages-editor.git", label = text "https://github.com/lucamug/elm-pages-editor.git" }
-                ]
             ]
         ]
 

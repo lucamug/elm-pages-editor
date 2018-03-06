@@ -30767,7 +30767,7 @@ var _lucamug$elm_pages_editor$Pages_Form$viewInput = F4(
 				_1: {ctor: '[]'}
 			});
 	});
-var _lucamug$elm_pages_editor$Pages_Form$view2 = F2(
+var _lucamug$elm_pages_editor$Pages_Form$viewMain = F2(
 	function (viewPort, model) {
 		var twoBoxesInARowWithNarrowSpacing = _elm_lang$core$Native_Utils.cmp(viewPort, 940) < 0;
 		var twoBoxesInAColumn = _elm_lang$core$Native_Utils.cmp(viewPort, 720) < 0;
@@ -31241,7 +31241,7 @@ var _lucamug$elm_pages_editor$Pages_Form$viewElement = F2(
 							},
 							{
 								ctor: '::',
-								_0: A2(_lucamug$elm_pages_editor$Pages_Form$view2, viewPort, model),
+								_0: A2(_lucamug$elm_pages_editor$Pages_Form$viewMain, viewPort, model),
 								_1: {ctor: '[]'}
 							})),
 					_1: {ctor: '[]'}
