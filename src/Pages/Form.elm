@@ -31,7 +31,9 @@ import Json.Encode
 import StyleElementsHack as Hack
 import Svg
 import Svg.Attributes as SA
+import Task
 import Validate
+import Window
 
 
 type alias Model =
@@ -56,6 +58,9 @@ type alias Model =
 
     -- CONFIGURATION
     , conf : Configuration
+
+    -- VIEWPORT SIZE
+    , device : Window.Size
     }
 
 
@@ -166,6 +171,7 @@ initModel configuration =
     , fieldEmail = ""
     , fieldPassword = ""
     , conf = conf
+    , device = Window.Size 600 600
     }
 
 
@@ -197,6 +203,7 @@ type Msg
     | OnFocus FormField
     | OnLoseFocus FormField
     | ToggleShowPasssword
+    | WindowSize Window.Size
 
 
 type FormField
@@ -209,6 +216,9 @@ update msg model =
     case msg of
         NoOp ->
             ( model, Cmd.none )
+
+        WindowSize wsize ->
+            ( { model | device = wsize }, Cmd.none )
 
         SubmitForm ->
             case validate model of
@@ -665,7 +675,7 @@ svgShow color =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    Sub.none
+    Window.resizes WindowSize
 
 
 
@@ -675,7 +685,7 @@ subscriptions model =
 init : String -> ( Model, Cmd Msg )
 init flag =
     ( initModel flag
-    , Cmd.none
+    , Task.perform WindowSize Window.size
     )
 
 
@@ -702,7 +712,7 @@ view model =
         , Background.color <| color White
         ]
     <|
-        viewElement 999 model
+        viewElement model.device.width model
 
 
 main : Program String Model Msg
