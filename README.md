@@ -1,7 +1,6 @@
 # Elm Pages Editor
 
-* [Demo with editor and Time Traveling Debugger](https://lucamug.github.io/elm-pages-editor/withEditorAndDebugger.html)
-* [Demo with editor](https://lucamug.github.io/elm-pages-editor/withEditor.html)
+* [Demo with editor and Time Traveling Debugger](https://lucamug.github.io/elm-pages-editor/withEditorAndDebugger.html) and [without](https://lucamug.github.io/elm-pages-editor/withEditor.html)
 * [Demo stand-alone](https://lucamug.github.io/elm-pages-editor/standalone.html)
 
 ## Made with
@@ -15,7 +14,7 @@
 
 ## Related posts
 
-* [Media queries in Elm](https://medium.com/@l.mugnaini/media-queries-in-elm-183203a6c1a7)
+* [Media queries in Elm](https://medium.com/@l.mugnaini/media-queries-in-elm-7b8f75cabc72)
 * [Unbreakable Json](https://medium.com/@l.mugnaini/unbreakable-json-95637300176c)
 * [CSS Nirvana](https://medium.com/front-end-hacking/css-nirvana-a92ba04cca06)
 * [Single Page Application Boilerplate for Elm](https://medium.com/@l.mugnaini/single-page-application-boilerplate-for-elm-160bb5f3eec2)
