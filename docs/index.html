@@ -8,48 +8,25 @@
     <meta name="theme-color" content="#ffdf34">
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
-    <title>Elm Pages Editor - Width Editor</title>
+    <title>Elm Pages Editor</title>
     <meta name="description" content="Editor to change and preview pages" />
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 
 <body>
+    <h1>Elm Pages Editor</h1>
+    <ul>
+        <li><a href="withEditorAndDebugger.html">withEditorAndDebugger.html</a></li>
+        <li><a href="withEditor.html">withEditor.html</a></li>
+        <li><a href="standalone.html">standalone.html</a></li>
+    </ul>
     <noscript>
         You need to enable JavaScript to run this app.
     </noscript>
-    <script src="withEditor-min.js"></script>
-    <script>
-        /* beautify preserve:start */
-        /* jshint ignore:start */
-
-        /* jshint ignore:end */
-        /* beautify preserve:end */
-        (function() {
-            "use strict";
-            var elmApp = Elm.Main.fullscreen({
-                localStorage: (localStorage.getItem("elmLocalStorage") || ""),
-                packVersion: typeof pack === "undefined" ? "1.0.0" : pack.version,
-                width: window.innerWidth,
-                height: window.innerHeight
-            });
-
-            elmApp.ports.urlChange.subscribe(function(title) {
-                window.requestAnimationFrame(function() {
-                    document.title = title;
-                    document.querySelector('meta[name="description"]').setAttribute("content", title);
-                });
-            });
-
-            elmApp.ports.sendValueToJsLocalStore.subscribe(function(value) {
-                localStorage.setItem("elmLocalStorage", value);
-            });
-
-            window.addEventListener("storage", function(event) {
-                if (event.storageArea === localStorage && event.key === "elmLocalStorage") {
-                    elmApp.ports.onLocalStorageChange.send(event.newValue);
-                }
-            }, false);
-        })();
-    </script>
 </body>
 
 </html>

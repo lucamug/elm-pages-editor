@@ -1,12 +1,12 @@
 port module Main exposing (main)
 
 import Element exposing (..)
-import Element.Area as Area
 import Element.Background as Background
 import Element.Border as Border
 import Element.Events as Events
 import Element.Font as Font
 import Element.Input as Input
+import Element.Region as Area
 import Framework.Button as Button
 import Framework.Color as Color exposing (Color(..), color)
 import Framework.Logo as Logo
@@ -17,8 +17,6 @@ import Http
 import Json.Decode
 import Json.Encode
 import Navigation
-import Pages.ElementExamples
-import Pages.ElementInputExamples
 import Pages.Form
 import StyleElementsHack as Hack
 import Styleguide
@@ -49,8 +47,6 @@ type Route
     | Editor
     | Help
     | Styleguide
-    | ElementExamples
-    | ElementInputExamples
     | Debug
     | NotFound
 
@@ -89,16 +85,6 @@ routeData route =
             , path = [ "debug" ]
             }
 
-        ElementExamples ->
-            { name = "Element Examples"
-            , path = [ "ElementExamples" ]
-            }
-
-        ElementInputExamples ->
-            { name = "Element Input Examples"
-            , path = [ "ElementInputExamples" ]
-            }
-
         NotFound ->
             { name = "Page Not Found"
             , path = []
@@ -122,12 +108,6 @@ routeView route model =
 
         Debug ->
             viewDebug model
-
-        ElementExamples ->
-            Pages.ElementExamples.view model
-
-        ElementInputExamples ->
-            Element.map MsgElementInputExamples (Pages.ElementInputExamples.view model.modelElementInputExamples)
 
         NotFound ->
             text "Page not found"
@@ -240,7 +220,6 @@ type Msg
     | FromJsLocalStoreToElm (Result String String)
     | WindowSize Window.Size
     | MsgStyleguide Styleguide.Msg
-    | MsgElementInputExamples Pages.ElementInputExamples.Msg
     | MsgForm Pages.Form.Msg
     | EditorChangeNegative Bool
     | EditorChangeTitle String
@@ -265,7 +244,6 @@ type alias Model =
     , packVersion : String
     , fullscreen : Bool
     , modelStyleguide : Styleguide.Model
-    , modelElementInputExamples : Pages.ElementInputExamples.Model
     , modelForm : Pages.Form.Model
     , configurations : List ( String, Pages.Form.Configuration )
     , device : Hack.Device
@@ -319,13 +297,6 @@ update msg model =
                     Pages.Form.update msg model.modelForm
             in
             ( { model | modelForm = newModel }, Cmd.map MsgForm newCmd )
-
-        MsgElementInputExamples msg ->
-            let
-                ( newModel, newCmd ) =
-                    Pages.ElementInputExamples.update msg model.modelElementInputExamples
-            in
-            ( { model | modelElementInputExamples = newModel }, Cmd.none )
 
         MsgStyleguide msg ->
             let
@@ -395,7 +366,7 @@ update msg model =
                     ( model, Cmd.none )
 
         WindowSize wsize ->
-            ( { model | device = Hack.classifyDevice <| wsize }, Cmd.none )
+            ( { model | device = classifyDevice <| wsize }, Cmd.none )
 
         EditorChangeNegative value ->
             let
@@ -495,7 +466,7 @@ initModel flag location =
     , title = "Elm Pages Editor"
     , localStorage = flag.localStorage
     , packVersion = flag.packVersion
-    , device = Hack.classifyDevice <| Window.Size flag.width flag.height
+    , device = classifyDevice <| Window.Size flag.width flag.height
     , deviceType = IPhone7
     , fullscreen = False
     , modelStyleguide =
@@ -504,7 +475,6 @@ initModel flag location =
         , ( Spinner.introspection, True )
         , ( Color.introspection, True )
         ]
-    , modelElementInputExamples = Pages.ElementInputExamples.initModel
     , modelForm = Pages.Form.initModel flag.localStorage
     , configurations =
         [ ( "Page 1"
@@ -731,7 +701,7 @@ viewApiResponse model =
         ]
         [ Input.multiline
             [ height <| px 300
-            , center
+            , centerX
             , width <| px 320
 
             -- cols are for Safari
@@ -747,7 +717,7 @@ viewApiResponse model =
             , text = Maybe.withDefault "API answer" model.modelForm.response
             , placeholder = Nothing
             , label = Input.labelAbove [] <| text ""
-            , notice = Nothing
+            , spellcheck = True
             }
         ]
 
@@ -806,57 +776,54 @@ viewDeviceFrame model =
     in
     column
         [ height shrink
+        , width shrink
+        , centerX
         , alignTop
+        , above <|
+            el
+                [ Font.shadow { offset = ( -2, -2 ), blur = 0, color = color Black }
+                , Font.shadow { offset = ( 2, 2 ), blur = 0, color = color GreyDark }
+                , Font.color <| color Dark
+                , moveDown 80
+                , Font.size 48
+                , centerX
+                ]
+                (text "● ▬▬▬")
+        , below <|
+            el
+                [ Font.shadow { offset = ( -2, -2 ), blur = 0, color = color Black }
+                , Font.shadow { offset = ( 2, 2 ), blur = 0, color = color GreyDark }
+                , Font.color <| color Dark
+                , moveUp 180
+                , Font.size 150
+                , centerX
+                ]
+                (text "●")
         ]
         [ column
-            [ above True <|
-                el
-                    [ Font.shadow { offset = ( -2, -2 ), blur = 0, color = color Black }
-                    , Font.shadow { offset = ( 2, 2 ), blur = 0, color = color GreyDark }
-                    , Font.color <| color Dark
-                    , moveDown 80
-                    , Font.size 48
-                    ]
-                    (text "● ▬▬▬")
-            , below True <|
-                el
-                    [ Font.shadow { offset = ( -2, -2 ), blur = 0, color = color Black }
-                    , Font.shadow { offset = ( 2, 2 ), blur = 0, color = color GreyDark }
-                    , Font.color <| color Dark
-                    , moveUp 180
-                    , Font.size 150
-                    ]
-                    (text "●")
+            [ padding 16
             ]
-            [ column
-                [ padding 16
+            [ el
+                [ height <| px (2 + deviceHeight + deviceBorderTop + deviceBorderBottom)
+                , width <| px (2 + deviceWidth + deviceBorderSide * 2)
+                , Border.widthEach
+                    { top = deviceBorderTop
+                    , right = deviceBorderSide
+                    , bottom = deviceBorderBottom
+                    , left = deviceBorderSide
+                    }
+                , Border.rounded 50
+                , Border.color <| color BlackTer
+                , Hack.style ( "box-shadow", "rgba(10, 10, 10, 0.19) 5px 5px 5px 5px" )
                 ]
-                [ el
-                    [ height <| px (2 + deviceHeight + deviceBorderTop + deviceBorderBottom)
-                    , width <| px (2 + deviceWidth + deviceBorderSide * 2)
-                    , Border.widthEach
-                        { top = deviceBorderTop
-                        , right = deviceBorderSide
-                        , bottom = deviceBorderBottom
-                        , left = deviceBorderSide
-                        }
-                    , Border.rounded 50
-                    , Border.color <| color BlackTer
-
-                    -- , Border.shadow { offset = ( 5, 5 ), blur = 5, size = 5, color = color Black }
-                    , Hack.style ( "box-shadow", "rgba(10, 10, 10, 0.19) 5px 5px 5px 5px" )
+              <|
+                el
+                    [ width fill
+                    , scrollbars
+                    , Border.width 1
+                    , Border.color <| color Black
                     ]
-                  <|
-                    el
-                        [ width fill
-                        , scrollbars
-                        , Border.width 1
-                        , Border.color <| color Black
-                        , Hack.style ( "justify-content", "normal" )
-                        , Hack.style ( "max-height", toString deviceHeight ++ "px" )
-                        ]
-                        (Element.map MsgForm (Pages.Form.viewElement deviceWidth model.modelForm))
-                ]
+                    (Element.map MsgForm (Pages.Form.viewElement deviceWidth model.modelForm))
             ]
         ]
 
@@ -933,7 +900,7 @@ viewHeader model =
     column
         [ paddingEach { top = 40, left = 0, bottom = 0, right = 0 } ]
         [ h1
-            [ center
+            [ centerX
             , Font.color <| color Black
             , Font.size 32
             , padding 0
@@ -943,7 +910,7 @@ viewHeader model =
                 [ Logo.logo Logo.Pencil 24
                 , el
                     [ Font.color <| color GreyLight
-                    , Font.weight 800
+                    , Font.bold
                     ]
                   <|
                     text model.title
@@ -953,7 +920,7 @@ viewHeader model =
 
 viewMenuStickyRight : List (Element msg) -> Model -> Attribute msg
 viewMenuStickyRight menuItems model =
-    above True <|
+    above <|
         row
             [ Hack.style ( "opacity", "0.7" )
             , Hack.style ( "position", "fixed" )
@@ -963,6 +930,7 @@ viewMenuStickyRight menuItems model =
             , pointer
             , padding 6
             , spacing 12
+            , width shrink
             ]
         <|
             menuItems
@@ -1034,7 +1002,7 @@ viewFooter model =
 
 onLinkClick : String -> Attribute Msg
 onLinkClick url =
-    attribute
+    htmlAttribute
         (Html.Events.onWithOptions "click"
             { stopPropagation = False
             , preventDefault = True
@@ -1070,7 +1038,6 @@ viewEditor model =
             [ Input.checkbox []
                 { label = Input.labelAbove [] <| text "Negative"
                 , onChange = Just EditorChangeNegative
-                , notice = Nothing
                 , checked = model.modelForm.conf.negative
                 , icon = Nothing
                 }
@@ -1078,7 +1045,6 @@ viewEditor model =
         , Input.radio []
             { label = Input.labelAbove [] <| text "Logo"
             , onChange = Just EditorChangeLogo
-            , notice = Nothing
             , selected = Just model.modelForm.conf.logo
             , options =
                 [ Input.option Logo.ElmMulticolor (el [ padding 10, alignLeft ] (Logo.logo Logo.ElmMulticolor 22))
@@ -1089,7 +1055,6 @@ viewEditor model =
         , Input.radio []
             { label = Input.labelAbove [] <| text "Color"
             , onChange = Just EditorChangeColor
-            , notice = Nothing
             , selected = Just model.modelForm.conf.color
             , options =
                 [ Input.option Primary (row [ padding 10, spacing 20 ] [ el [ alignLeft, Border.rounded 3, width <| px 50, height <| px 40, Background.color <| color Primary ] <| text "", text "Primary" ])
@@ -1102,7 +1067,6 @@ viewEditor model =
             []
             { label = Input.labelAbove [] <| text "Title"
             , onChange = Just EditorChangeTitle
-            , notice = Nothing
             , placeholder = Nothing
             , text = model.modelForm.conf.title
             }
@@ -1110,7 +1074,6 @@ viewEditor model =
             []
             { label = Input.labelAbove [] <| text "Submit button"
             , onChange = Just EditorChangeSubmitText
-            , notice = Nothing
             , placeholder = Nothing
             , text = model.modelForm.conf.submitText
             }
@@ -1118,20 +1081,19 @@ viewEditor model =
             []
             { label = Input.labelAbove [] <| text "Background"
             , onChange = Just EditorChangeBackground
-            , notice = Nothing
             , placeholder = Nothing
             , text = model.modelForm.conf.background
             }
         , column []
             [ h3 [] <| text "Configuration"
-            , Input.spellcheckedMultiline
+            , Input.multiline
                 [ height <| px 200
                 ]
                 { onChange = Just EditorChangeJson
                 , text = Json.Encode.encode 4 (Pages.Form.confEncoder model.modelForm.conf)
                 , placeholder = Nothing
                 , label = Input.labelAbove [] <| text ""
-                , notice = Nothing
+                , spellcheck = True
                 }
             ]
         ]
@@ -1204,7 +1166,7 @@ header level attributes child =
          , Font.size fontSize
          , paddingEach { top = pd, right = 0, bottom = pd, left = 0 }
          , alignLeft
-         , Font.weight 800
+         , Font.bold
          ]
             ++ attributes
         )

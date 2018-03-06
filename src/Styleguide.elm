@@ -17,11 +17,11 @@ For more info about the idea, see [this post](https://medium.com/@l.mugnaini/zer
 
 import Color exposing (gray, rgb)
 import Element exposing (..)
-import Element.Area as Area
 import Element.Background as Background
 import Element.Border as Border
 import Element.Events as Events
 import Element.Font as Font
+import Element.Region as Area
 import Html
 import Html.Attributes
 
@@ -106,7 +106,7 @@ attrOpen : List (Element.Attribute msg)
 attrOpen =
     [ Font.color Color.black
     , Background.color Color.lightGray
-    , Background.mouseOverColor Color.white
+    , mouseOver [ Background.color Color.white ]
     ]
 
 
@@ -114,8 +114,10 @@ attrClose : List (Element.Attribute msg)
 attrClose =
     [ Font.color Color.black
     , Background.color Color.white
-    , Font.mouseOverColor Color.black
-    , Background.mouseOverColor Color.lightGray
+    , mouseOver
+        [ Font.color Color.black
+        , Background.color Color.lightGray
+        ]
     ]
 
 
@@ -211,7 +213,7 @@ viewPage model =
     row [ width fill ]
         [ column
             [ padding 10
-            , Element.attribute (Html.Attributes.style [ ( "max-width", "780px" ) ])
+            , Element.htmlAttribute (Html.Attributes.style [ ( "max-width", "780px" ) ])
             ]
             ([ el h1 <| text "Style Guide" ]
                 ++ List.map (\( data, show ) -> viewSection data show) model
@@ -333,7 +335,7 @@ h1 : List (Element.Attribute msg)
 h1 =
     [ Area.heading 1
     , Font.size 28
-    , Font.weight 700
+    , Font.bold
     , paddingEach { bottom = 40, left = 0, right = 0, top = 20 }
     ]
 
@@ -343,7 +345,7 @@ h2 =
     [ Area.heading 2
     , Font.size 24
     , alignLeft
-    , Font.weight 700
+    , Font.bold
     , paddingXY 0 20
     ]
 
@@ -353,7 +355,7 @@ h3 =
     [ Area.heading 3
     , Font.size 18
     , alignLeft
-    , Font.weight 700
+    , Font.bold
     , paddingXY 0 20
     ]
 

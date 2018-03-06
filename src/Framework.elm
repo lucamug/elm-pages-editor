@@ -13,8 +13,8 @@ The package is self documented. To generate the documentation it uses elm-styleg
 
 import Color
 import Element exposing (..)
-import Element.Area as Area
 import Element.Font as Font
+import Element.Region as Area
 import Framework.Button
 import Framework.Color
 import Framework.Spinner

@@ -362,12 +362,13 @@ viewInput model field inputType inputName =
             , Events.onFocus <| OnFocus field
             , Events.onLoseFocus <| OnLoseFocus field
             , Border.rounded 0
-            , Element.attribute
+            , Element.htmlAttribute
                 (if field == Email then
                     Html.Attributes.autofocus True
                  else
                     Html.Attributes.autofocus False
                 )
+            , below <| el [ Font.color <| color Primary ] errors
             ]
             { onChange = Just <| OnInput field
             , text = value
@@ -391,7 +392,6 @@ viewInput model field inputType inputName =
                                )
                         )
                         (text inputName)
-            , notice = Just <| Input.errorBelow [ Font.color <| color Primary ] errors
             }
         ]
 
@@ -405,11 +405,6 @@ view2 viewPort model =
             else
                 color Grey
 
-        {- MEDIA QUERIES
-
-           This view has two main boxes, one for Sign in and one for new
-           membership
-        -}
         paddingInsideBoxes =
             30
 
@@ -431,14 +426,13 @@ view2 viewPort model =
         twoBoxesInARowWithNarrowSpacing =
             viewPort < 940
 
-        structure =
+        structure1 =
             if twoBoxesInAColumn then
-                column [ spacing 20 ]
+                column [ spacing 20, width shrink, centerX ]
             else if twoBoxesInARowWithNarrowSpacing then
-                row [ spacing 20 ]
+                row [ spacing 20, width shrink, centerX, centerY ]
             else
-                -- twoBoxesInARowWithWideSpacing
-                row [ spacing 60 ]
+                row [ spacing 60, width shrink, centerX, centerY ]
 
         structure0 =
             if twoBoxesInAColumnThatStopEnlarging then
@@ -447,12 +441,13 @@ view2 viewPort model =
                 row
                     [ width shrink
                     , Hack.style ( "min-width", toString maxWidthOfBoxesWhenTheyAreInColumnFormation ++ "px" )
+                    , centerX
                     ]
             else
                 row []
 
         commonAttr =
-            [ attribute <| onEnter SubmitForm
+            [ htmlAttribute <| onEnter SubmitForm
             , Hack.style ( "box-shadow", "0px 3px 10px 2px rgba(0, 0, 0, 0.06)" )
             , if model.conf.negative then
                 Background.color <| color GreyDark
@@ -472,7 +467,7 @@ view2 viewPort model =
                 []
     in
     structure0
-        [ structure
+        [ structure1
             [ column
                 ([ Hack.style ( "max-width", toString maxWidthBoxOnTheLeft ++ "px" )
                  , Border.widthEach { bottom = 0, left = 0, right = 0, top = 0 }
@@ -538,7 +533,7 @@ view2 viewPort model =
                     , el [] <| text "So bitter is it, death is little more;\nBut of the good to treat, which there I found,\nSpeak will I of the other things I saw there."
                     , el
                         [ paddingXY 0 30
-                        , center
+                        , centerX
                         , width shrink
                         ]
                         (Framework.Button.button
@@ -562,7 +557,7 @@ view2 viewPort model =
                                    ]
                             )
                             Nothing
-                            "Midway upon the journey"
+                            "Midway upon..."
                         )
                     ]
                 ]
@@ -626,6 +621,7 @@ viewElement viewPort model =
             (row
                 [ width fill
                 , padding 16
+                , centerY
                 ]
                 [ view2 viewPort model
                 ]

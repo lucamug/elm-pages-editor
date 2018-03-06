@@ -30,4 +30,4 @@ classifyDevice { width, height } =
 
 style : ( String, String ) -> Element.Attribute msg
 style style =
-    Element.attribute (Html.Attributes.style [ style ])
+    Element.htmlAttribute (Html.Attributes.style [ style ])
