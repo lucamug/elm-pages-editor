@@ -24,6 +24,12 @@ import UrlParser exposing ((</>))
 import Window
 
 
+version : String
+version =
+    "1.0.0"
+
+
+
 -- ROUTES
 
 
@@ -1095,6 +1101,15 @@ viewEditor model =
                 , label = Input.labelAbove [] <| text ""
                 , spellcheck = True
                 }
+            ]
+        , column []
+            [ text <| "Version " ++ version
+            , paragraph []
+                [ text "Source code at "
+                , link
+                    [ Font.color <| color Primary ]
+                    { url = "https://github.com/lucamug/elm-pages-editor.git", label = text "https://github.com/lucamug/elm-pages-editor.git" }
+                ]
             ]
         ]
 

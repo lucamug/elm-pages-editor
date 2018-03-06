@@ -30785,9 +30785,6 @@ var _rtfeldman$elm_validate$Validate$all = function (validators) {
 	return validator;
 };
 
-var _lucamug$elm_pages_editor$Pages_Form$subscriptions = function (model) {
-	return _elm_lang$core$Platform_Sub$none;
-};
 var _lucamug$elm_pages_editor$Pages_Form$svgShow = function (color) {
 	return A2(
 		_elm_lang$svg$Svg$svg,
@@ -31039,10 +31036,27 @@ var _lucamug$elm_pages_editor$Pages_Form$confEncoder = function (conf) {
 			}
 		});
 };
-var _lucamug$elm_pages_editor$Pages_Form$Model = F9(
-	function (a, b, c, d, e, f, g, h, i) {
-		return {errors: a, response: b, focus: c, showErrors: d, showPassword: e, formState: f, fieldEmail: g, fieldPassword: h, conf: i};
-	});
+var _lucamug$elm_pages_editor$Pages_Form$Model = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return {errors: a, response: b, focus: c, showErrors: d, showPassword: e, formState: f, fieldEmail: g, fieldPassword: h, conf: i, device: j};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
 var _lucamug$elm_pages_editor$Pages_Form$Configuration = F6(
 	function (a, b, c, d, e, f) {
 		return {negative: a, logo: b, color: c, background: d, title: e, submitText: f};
@@ -31093,14 +31107,21 @@ var _lucamug$elm_pages_editor$Pages_Form$initModel = function (configuration) {
 		formState: _lucamug$elm_pages_editor$Pages_Form$Editing,
 		fieldEmail: '',
 		fieldPassword: '',
-		conf: conf
+		conf: conf,
+		device: A2(_elm_lang$window$Window$Size, 600, 600)
 	};
+};
+var _lucamug$elm_pages_editor$Pages_Form$WindowSize = function (a) {
+	return {ctor: 'WindowSize', _0: a};
+};
+var _lucamug$elm_pages_editor$Pages_Form$subscriptions = function (model) {
+	return _elm_lang$window$Window$resizes(_lucamug$elm_pages_editor$Pages_Form$WindowSize);
 };
 var _lucamug$elm_pages_editor$Pages_Form$init = function (flag) {
 	return {
 		ctor: '_Tuple2',
 		_0: _lucamug$elm_pages_editor$Pages_Form$initModel(flag),
-		_1: _elm_lang$core$Platform_Cmd$none
+		_1: A2(_elm_lang$core$Task$perform, _lucamug$elm_pages_editor$Pages_Form$WindowSize, _elm_lang$window$Window$size)
 	};
 };
 var _lucamug$elm_pages_editor$Pages_Form$ToggleShowPasssword = {ctor: 'ToggleShowPasssword'};
@@ -31165,6 +31186,14 @@ var _lucamug$elm_pages_editor$Pages_Form$update = F2(
 		switch (_p10.ctor) {
 			case 'NoOp':
 				return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+			case 'WindowSize':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{device: _p10._0}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
 			case 'SubmitForm':
 				var _p11 = _lucamug$elm_pages_editor$Pages_Form$validate(model);
 				if (_p11.ctor === '[]') {
@@ -31917,7 +31946,7 @@ var _lucamug$elm_pages_editor$Pages_Form$view = function (model) {
 				}
 			}
 		},
-		A2(_lucamug$elm_pages_editor$Pages_Form$viewElement, 999, model));
+		A2(_lucamug$elm_pages_editor$Pages_Form$viewElement, model.device.width, model));
 };
 var _lucamug$elm_pages_editor$Pages_Form$main = _elm_lang$html$Html$programWithFlags(
 	{init: _lucamug$elm_pages_editor$Pages_Form$init, view: _lucamug$elm_pages_editor$Pages_Form$view, update: _lucamug$elm_pages_editor$Pages_Form$update, subscriptions: _lucamug$elm_pages_editor$Pages_Form$subscriptions})(_elm_lang$core$Json_Decode$string);
@@ -32447,6 +32476,7 @@ var _lucamug$elm_pages_editor$Main$routePathJoined = function (route) {
 			_lucamug$elm_pages_editor$Main$pathSeparator,
 			_lucamug$elm_pages_editor$Main$routePath(route)));
 };
+var _lucamug$elm_pages_editor$Main$version = '1.0.0';
 var _lucamug$elm_pages_editor$Main$urlChange = _elm_lang$core$Native_Platform.outgoingPort(
 	'urlChange',
 	function (v) {
@@ -33033,7 +33063,45 @@ var _lucamug$elm_pages_editor$Main$viewEditor = function (model) {
 													_1: {ctor: '[]'}
 												}
 											}),
-										_1: {ctor: '[]'}
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_mdgriffith$stylish_elephants$Element$column,
+												{ctor: '[]'},
+												{
+													ctor: '::',
+													_0: _mdgriffith$stylish_elephants$Element$text(
+														A2(_elm_lang$core$Basics_ops['++'], 'Version ', _lucamug$elm_pages_editor$Main$version)),
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_mdgriffith$stylish_elephants$Element$paragraph,
+															{ctor: '[]'},
+															{
+																ctor: '::',
+																_0: _mdgriffith$stylish_elephants$Element$text('Source code at '),
+																_1: {
+																	ctor: '::',
+																	_0: A2(
+																		_mdgriffith$stylish_elephants$Element$link,
+																		{
+																			ctor: '::',
+																			_0: _mdgriffith$stylish_elephants$Element_Font$color(
+																				_lucamug$elm_pages_editor$Framework_Color$color(_lucamug$elm_pages_editor$Framework_Color$Primary)),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			url: 'https://github.com/lucamug/elm-pages-editor.git',
+																			label: _mdgriffith$stylish_elephants$Element$text('https://github.com/lucamug/elm-pages-editor.git')
+																		}),
+																	_1: {ctor: '[]'}
+																}
+															}),
+														_1: {ctor: '[]'}
+													}
+												}),
+											_1: {ctor: '[]'}
+										}
 									}
 								}
 							}
@@ -34031,7 +34099,7 @@ var _lucamug$elm_pages_editor$Main$main = A2(
 var Elm = {};
 Elm['Main'] = Elm['Main'] || {};
 if (typeof _lucamug$elm_pages_editor$Main$main !== 'undefined') {
-    _lucamug$elm_pages_editor$Main$main(Elm['Main'], 'Main', {"types":{"unions":{"Framework.Color.Color":{"args":[],"tags":{"BlackTer":[],"Dark":[],"BlackBis":[],"GreyLight":[],"White":[],"GreyDarker":[],"Link":[],"Success":[],"Primary":[],"WhiteTer":[],"WhiteBis":[],"Black":[],"Warning":[],"GreyDark":[],"GreyLighter":[],"Danger":[],"Light":[],"Info":[],"Transparent":[],"Grey":[]}},"Dict.LeafColor":{"args":[],"tags":{"LBBlack":[],"LBlack":[]}},"Pages.Form.Msg":{"args":[],"tags":{"OnFocus":["Pages.Form.FormField"],"Response":["Result.Result Http.Error String"],"OnInput":["Pages.Form.FormField","String"],"SubmitForm":[],"ToggleShowPasssword":[],"OnLoseFocus":["Pages.Form.FormField"],"NoOp":[]}},"Pages.Form.FormField":{"args":[],"tags":{"Email":[],"Password":[]}},"Dict.Dict":{"args":["k","v"],"tags":{"RBNode_elm_builtin":["Dict.NColor","k","v","Dict.Dict k v","Dict.Dict k v"],"RBEmpty_elm_builtin":["Dict.LeafColor"]}},"Framework.Logo.Logo":{"args":[],"tags":{"ElmYellow":[],"ElmMulticolor":[],"Fullscreen":[],"ExitFullscreen":[],"Strawberry":[],"Pencil":[],"Watermelon":[],"ElmWhite":[]}},"Main.Msg":{"args":[],"tags":{"EditorChangeNegative":["Bool"],"MsgStyleguide":["Styleguide.Msg"],"NewApiData":["Result.Result Http.Error Main.DataFromApi"],"EditorChangeJson":["String"],"EditorChangeTitle":["String"],"MsgForm":["Pages.Form.Msg"],"Response":["Result.Result Http.Error String"],"EditorChangeSubmitText":["String"],"ChangeDevice":["Main.DeviceType"],"EditorChangeBackground":["String"],"WindowSize":["Window.Size"],"EditorChangeLogo":["Framework.Logo.Logo"],"FetchApiData":["String"],"FromJsLocalStoreToElm":["Result.Result String String"],"EditorChangeColor":["Framework.Color.Color"],"UrlChange":["Navigation.Location"],"ToggleFullscreen":[],"ChangeLocation":["String"],"ChangeConfiguration":["Pages.Form.Configuration"]}},"Dict.NColor":{"args":[],"tags":{"BBlack":[],"Red":[],"NBlack":[],"Black":[]}},"Styleguide.Msg":{"args":[],"tags":{"ToggleSection":["String"]}},"Main.DeviceType":{"args":[],"tags":{"IPad":[],"IPhoneX":[],"IPhone5":[],"IPhone7":[]}},"Http.Error":{"args":[],"tags":{"BadUrl":["String"],"NetworkError":[],"Timeout":[],"BadStatus":["Http.Response String"],"BadPayload":["String","Http.Response String"]}},"Result.Result":{"args":["error","value"],"tags":{"Ok":["value"],"Err":["error"]}}},"aliases":{"Http.Response":{"args":["body"],"type":"{ url : String , status : { code : Int, message : String } , headers : Dict.Dict String String , body : body }"},"Pages.Form.Configuration":{"args":[],"type":"{ negative : Bool , logo : Framework.Logo.Logo , color : Framework.Color.Color , background : String , title : String , submitText : String }"},"Window.Size":{"args":[],"type":"{ width : Int, height : Int }"},"Main.DataFromApi":{"args":[],"type":"{ origin : String, data : String }"},"Navigation.Location":{"args":[],"type":"{ href : String , host : String , hostname : String , protocol : String , origin : String , port_ : String , pathname : String , search : String , hash : String , username : String , password : String }"}},"message":"Main.Msg"},"versions":{"elm":"0.18.0"}});
+    _lucamug$elm_pages_editor$Main$main(Elm['Main'], 'Main', {"types":{"unions":{"Framework.Color.Color":{"args":[],"tags":{"BlackTer":[],"Dark":[],"BlackBis":[],"GreyLight":[],"White":[],"GreyDarker":[],"Link":[],"Success":[],"Primary":[],"WhiteTer":[],"WhiteBis":[],"Black":[],"Warning":[],"GreyDark":[],"GreyLighter":[],"Danger":[],"Light":[],"Info":[],"Transparent":[],"Grey":[]}},"Dict.LeafColor":{"args":[],"tags":{"LBBlack":[],"LBlack":[]}},"Pages.Form.Msg":{"args":[],"tags":{"OnFocus":["Pages.Form.FormField"],"Response":["Result.Result Http.Error String"],"WindowSize":["Window.Size"],"OnInput":["Pages.Form.FormField","String"],"SubmitForm":[],"ToggleShowPasssword":[],"OnLoseFocus":["Pages.Form.FormField"],"NoOp":[]}},"Pages.Form.FormField":{"args":[],"tags":{"Email":[],"Password":[]}},"Dict.Dict":{"args":["k","v"],"tags":{"RBNode_elm_builtin":["Dict.NColor","k","v","Dict.Dict k v","Dict.Dict k v"],"RBEmpty_elm_builtin":["Dict.LeafColor"]}},"Framework.Logo.Logo":{"args":[],"tags":{"ElmYellow":[],"ElmMulticolor":[],"Fullscreen":[],"ExitFullscreen":[],"Strawberry":[],"Pencil":[],"Watermelon":[],"ElmWhite":[]}},"Main.Msg":{"args":[],"tags":{"EditorChangeNegative":["Bool"],"MsgStyleguide":["Styleguide.Msg"],"NewApiData":["Result.Result Http.Error Main.DataFromApi"],"EditorChangeJson":["String"],"EditorChangeTitle":["String"],"MsgForm":["Pages.Form.Msg"],"Response":["Result.Result Http.Error String"],"EditorChangeSubmitText":["String"],"ChangeDevice":["Main.DeviceType"],"EditorChangeBackground":["String"],"WindowSize":["Window.Size"],"EditorChangeLogo":["Framework.Logo.Logo"],"FetchApiData":["String"],"FromJsLocalStoreToElm":["Result.Result String String"],"EditorChangeColor":["Framework.Color.Color"],"UrlChange":["Navigation.Location"],"ToggleFullscreen":[],"ChangeLocation":["String"],"ChangeConfiguration":["Pages.Form.Configuration"]}},"Dict.NColor":{"args":[],"tags":{"BBlack":[],"Red":[],"NBlack":[],"Black":[]}},"Styleguide.Msg":{"args":[],"tags":{"ToggleSection":["String"]}},"Main.DeviceType":{"args":[],"tags":{"IPad":[],"IPhoneX":[],"IPhone5":[],"IPhone7":[]}},"Http.Error":{"args":[],"tags":{"BadUrl":["String"],"NetworkError":[],"Timeout":[],"BadStatus":["Http.Response String"],"BadPayload":["String","Http.Response String"]}},"Result.Result":{"args":["error","value"],"tags":{"Ok":["value"],"Err":["error"]}}},"aliases":{"Http.Response":{"args":["body"],"type":"{ url : String , status : { code : Int, message : String } , headers : Dict.Dict String String , body : body }"},"Pages.Form.Configuration":{"args":[],"type":"{ negative : Bool , logo : Framework.Logo.Logo , color : Framework.Color.Color , background : String , title : String , submitText : String }"},"Window.Size":{"args":[],"type":"{ width : Int, height : Int }"},"Main.DataFromApi":{"args":[],"type":"{ origin : String, data : String }"},"Navigation.Location":{"args":[],"type":"{ href : String , host : String , hostname : String , protocol : String , origin : String , port_ : String , pathname : String , search : String , hash : String , username : String , password : String }"}},"message":"Main.Msg"},"versions":{"elm":"0.18.0"}});
 }
 
 if (typeof define === "function" && define['amd'])
